@@ -16,7 +16,7 @@ body{
 	margin:0;
 	padding:0;
 	font-size:12px;
-	font-family:verdana, Arial, Helvetica, sans-serif;
+	font-family:"SimSun","宋体","Arial Narrow";
 	color:#333333;
 	background-color:#FFFFFF;
 	}
@@ -55,10 +55,10 @@ div.wrapper h1, div.wrapper h2, div.wrapper h3, div.wrapper h4, div.wrapper h5, 
 	font-size:20px;
 	font-weight:normal;
 	line-height:normal;
-	font-family:Georgia, "Times New Roman", Times, serif;
+	font-family:"SimSun","宋体","Arial Narrow";
 	}
 
-.col0{color:#FFFFFF; background-color:#2D3134; border-top:5px solid #4A5155;}
+.col0{color:#FFFFFF; background-color:rgb(255,255,255); border-top:5px solid #4A5155;}
 
 .col1, .col1 a{color:#C4C5C3; background-color:#2D3134;}
 
@@ -90,7 +90,7 @@ div.wrapper h1, div.wrapper h2, div.wrapper h3, div.wrapper h4, div.wrapper h5, 
 #header #logo{
 	display:block;
 	float:left;
-	width:300px;
+	width:125px;
 	margin-top:7px;
 	overflow:hidden;
 	}
@@ -105,7 +105,29 @@ div.wrapper h1, div.wrapper h2, div.wrapper h3, div.wrapper h4, div.wrapper h5, 
 #header #logo h1{
 	font-size:32px;
 	}
-
+#header #search {
+                    display:block;
+	float:right;
+	width:835px;
+	margin-top:7px;
+	height: 61px;
+    }
+    #header #search form{
+                    height: 61px;
+                    display: block;
+                    float:left;
+                    font-size: 24px;
+                    width: 500px;
+    }
+    #header #search form input{
+                    font-size: 24px;
+                    margin: 13px 0 13px 0;
+                    
+    }
+     #header #search form input[type="submit"]{
+                    border: 2px solid;
+                    
+    }
 /* ----------------------------------------------BreadCrumb-------------------------------------*/
 
 #breadcrumb a{
@@ -331,7 +353,7 @@ div.wrapper h1, div.wrapper h2, div.wrapper h3, div.wrapper h4, div.wrapper h5, 
 	margin:0;
 	padding:0 0 8px 0;
 	font-weight:normal;
-	font-family:Georgia, "Times New Roman", Times, serif;
+	font-family:"SimSun","宋体","Arial Narrow";
 	line-height:normal;
 	border-bottom:1px dotted #999999;
 	}
