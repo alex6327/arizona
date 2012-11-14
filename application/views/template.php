@@ -16,6 +16,7 @@
         <div class="warapper col1">
             <?php $this->load->view("_header");?>
         <div class="warapper col2">
+            
             <?php $this->load->view("_slide");?>
         </div>
         <div class="warapper col3">

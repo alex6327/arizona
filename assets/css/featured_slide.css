@@ -1,22 +1,42 @@
-/*
-Template Name: School Education
-File: Featured Slider CSS
-Author: 88web
-Author URI: http://www.88web.org/
-Licence: <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-Share Alike 3.0 Unported License</a>
-*/
-
-#featured_slide {
-	position:relative;
+#slide{
+                     position:relative;
 	margin:0 auto 0;
 	display:block;
 	width:960px;
+	height:340px;
+	overflow:hidden;
+	font-size:13px;
+	font-family:"SimSun","宋体","Arial Narrow";
+	color:#FFFFFF;
+	background-color:#22C0FD;
+        
+}
+#category_menu{
+                    position:relative;
+	margin:0 auto 0;
+	display:block;
+	width:510px;
 	height:300px;
 	overflow:hidden;
 	font-size:13px;
 	font-family:"SimSun","宋体","Arial Narrow";
 	color:#FFFFFF;
 	background-color:#22C0FD;
+                float: left;
+                     
+}
+#featured_slide {
+	position:relative;
+	margin:0 auto 0;
+	display:block;
+	width:450px;
+	height:300px;
+	overflow:hidden;
+	font-size:13px;
+	font-family:"SimSun","宋体","Arial Narrow";
+	color:#FFFFFF;
+	background-color:#22C0FD;
+                  float:right;
 	}
 
 #featured_slide a{
@@ -106,11 +126,12 @@ HTML Output:
 	position:relative;
 	margin:10px auto -5px;
 	display:block;
-	width:960px;
+	width:450px;
 	height:25px;
 	text-align:center;
-	background-image:url("../images/trans.png");
+	/*background-image:url("../images/trans.png");*/
 	z-index:1000;
+        float: right;
 	}
 
 #fsn ul{
