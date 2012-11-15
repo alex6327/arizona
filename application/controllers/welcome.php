@@ -22,9 +22,12 @@ class Welcome extends CI_Controller {
     }
     public function index()
     {
-            $this->load->library('session');
-            $this->load->database();
-            $this->load->view('template');
+            $data = array();
+            $data['pagetitle']='生物产品仓库';
+            $data['pagebody'] = 'home';
+            $data['sitenavi']='slide';
+            $data['data']=&$data;
+            $this->load->view('template',$data);
     }
 }
 

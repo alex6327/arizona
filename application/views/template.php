@@ -15,12 +15,13 @@
         </div>
         <div class="warapper col1">
             <?php $this->load->view("_header");?>
+            </div>
         <div class="warapper col2">
             
-            <?php $this->load->view("_slide");?>
+            <?php $this->load->view($sitenavi,$data);?>
         </div>
         <div class="warapper col3">
-            <?php $this->load->view("_homecontent");?>            
+            <?php $this->load->view($pagebody,$data);?>            
         </div>
         <div class="warapper col4">
             <?php $this->load->view("_footer");?>            
