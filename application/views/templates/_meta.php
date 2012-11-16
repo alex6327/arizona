@@ -18,9 +18,21 @@ if(!defined('APPPATH'))
     <script type="text/javascript" src="/assets/js/jquery.cycle.min.js"></script>
     <script type="text/javascript" src="/assets/js/jquery.cycle.setup.js"></script>
     <script type="text/javascript" src="/assets/js/jquery-ui.js"></script>
-    <script>
+    <script type="text/javascript">
     $(document).ready(function() {
     $("#menu").menu();
     });
+    function validateEmail()
+        {
+        var x=document.getElementById("email").value;
+        var atpos=x.indexOf("@");
+        var dotpos=x.lastIndexOf(".");
+        if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length)
+          {
+          alert("Not a valid e-mail address");
+          return false;
+          }
+        }
   </script>
+  
 </head>

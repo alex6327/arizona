@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Register extends CI_Controller {
+class Account extends CI_Controller {
 
 	
     function __construct() {
@@ -8,12 +8,20 @@ class Register extends CI_Controller {
     }
     public function index()
     {
-            $data = array();
+           
+    }
+    function register()
+    {
+             $data = array();
             $data['pagetitle']='用户注册';
-            $data['pagebody'] = 'register';
-            $data['sitenavi']='register_sitenavi';
+            $data['pagebody'] = 'account/register';
+            $data['sitenavi']='account/register_sitenavi';
             $data['data']=&$data;
             $this->load->view('template',$data);
+    }
+    function creat_account()
+    {
+        
     }
 }
 

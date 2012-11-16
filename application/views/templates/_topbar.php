@@ -10,7 +10,7 @@
       <div class="topbox">
         <h2>BioCompete</h2>
         <p>应用生物材料（ABM）公司是一家加拿大公司，是不断在寻找对生命科学的研究和药物开发的最新创新。 ABM公司开发和销售新产品和服务，要在最有竞争力的价格，最优质的研究人员。我们众多的产品线，全面覆盖众多尖端技术，如RT-PCR，抗体，RNA干扰，细胞永生化，与腺病毒和慢病毒表达系统。我们还提供各种定制服务，创造新的解决方案，以实验的挑战，并帮助您最大限度地提高您的时间，最大限度地减少您的研究工作量。</p>
-        <p class="register"><a href="/register">新用户注册 &raquo;</a></p>
+        <p class="register"><a href="/account/register">新用户注册 &raquo;</a></p>
       </div>
       <div class="topbox">
         <h2>用户登录</h2>

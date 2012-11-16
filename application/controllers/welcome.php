@@ -29,6 +29,7 @@ class Welcome extends CI_Controller {
             $data['data']=&$data;
             $this->load->view('template',$data);
     }
+    
 }
 
 /* End of file welcome.php */
