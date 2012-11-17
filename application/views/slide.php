@@ -84,19 +84,19 @@
 </div>
   <div id="featured_slide">
     
-        <div class="featured_box"><a href="#"><img src="/assets/images/demo/450x300.gif" alt="" /></a>
+        <div class="featured_box"><a href="#"><img src="/assets/images/demo/(1).jpg" alt="" /></a>
 
         </div>
-        <div class="featured_box"><a href="#"><img src="/assets/images/demo/450x300.gif" alt="" /></a>
+        <div class="featured_box"><a href="#"><img src="/assets/images/demo/(2).jpg" alt="" /></a>
 
         </div>
-        <div class="featured_box"><a href="#"><img src="/assets/images/demo/450x300.gif" alt="" /></a>
+        <div class="featured_box"><a href="#"><img src="/assets/images/demo/(3).jpg" alt="" /></a>
 
         </div>
-        <div class="featured_box"><a href="#"><img src="/assets/images/demo/450x300.gif" alt="" /></a>
+        <div class="featured_box"><a href="#"><img src="/assets/images/demo/(4).jpg" alt="" /></a>
 
         </div>
-        <div class="featured_box"><a href="#"><img src="/assets/images/demo/450x300.gif" alt="" /></a>
+        <div class="featured_box"><a href="#"><img src="/assets/images/demo/(5).jpg" alt="" /></a>
 
         </div>
           

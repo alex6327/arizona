@@ -14,14 +14,14 @@
       </div>
       <div class="topbox">
         <h2>用户登录</h2>
-        <form action="#" method="post">
+        <form action="account/login" method="post">
           <fieldset>
             <legend>Login Form</legend>
-            <label for="username">用户名:
-              <input type="text" name="username" id="username" value="" />
+            <label for="loginEmail">电子邮箱:
+              <input type="text" name="loginEmail" id="loginEmail" value="" />
             </label>
-            <label for="userpass">密码:
-              <input type="password" name="userpass" id="userpass" value="" />
+            <label for="loginPwd">密码:
+              <input type="password" name="loginPwd" id="loginPwd" value="" />
             </label>
             <label for="userremember">
               <input class="checkbox" type="checkbox" name="userremember" id="userremember" checked="checked" />
@@ -48,7 +48,7 @@
     <div id="loginpanel">
       <ul>
         <li class="left">请点击这里 &raquo;</li>
-        <li class="right" id="toggle"><a id="slideit" href="#slidepanel">登录</a><a id="closeit" style="display: none;" href="#slidepanel">关闭</a></li>
+        <li class="right" id="toggle"><a id="slideit" href="#">登录</a><a id="closeit" style="display: none;" href="#">关闭</a></li>
       </ul>
     </div>
     <br class="clear" />

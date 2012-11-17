@@ -8,7 +8,7 @@
 <div id="homecontent">
     <div class="register">
     <h1>填写账户信息</h1>
-    <form id="form1" name="form1" method="post" action="account/create_account"><p style="font-size:11px;color:#F00;">基本信息 (带*的为必填项)</p>
+    <form id="form1" name="form1" method="post" action="create_account"><p style="font-size:11px;color:#F00;">基本信息 (带*的为必填项)</p>
           <table  border="0" cellpadding="3" cellspacing="0" bgcolor="#F5F5F5">
             <tr align="center">
               <td height="30" colspan="6" align="left" bgcolor="#D3D6BE"><strong>基本信息</strong></td>
