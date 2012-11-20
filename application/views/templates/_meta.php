@@ -18,6 +18,16 @@ if(!defined('APPPATH'))
     <script type="text/javascript" src="/assets/js/jquery.cycle.min.js"></script>
     <script type="text/javascript" src="/assets/js/jquery.cycle.setup.js"></script>
     <script type="text/javascript" src="/assets/js/jquery-ui.js"></script>
+    <script>
+        <?php 
+            if(isset($slideDown))
+            {
+                echo "$(document).ready(function() { $('div#slidepanel').slideDown('slow');});";
+                
+            }
+        ?>
+        </script>
+        
     <script type="text/javascript">
     $(document).ready(function() {
     $("#menu").menu();

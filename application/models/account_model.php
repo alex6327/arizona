@@ -14,7 +14,7 @@ class Account_model extends CI_Model {
     {
         $usrinput = array(
             'email' => $this->input->post('email', TRUE),
-            'password' => $this->input->post('pwd', TRUE) ,
+            'password' => sha1($this->input->post('pwd', TRUE)) ,
             'accountName' => $this->input->post('uname', TRUE),
             );
 
@@ -32,7 +32,7 @@ class Account_model extends CI_Model {
     }
     function login()
     {
-        $loginarray = array('email' => $this->input->post('loginEmail', TRUE), 'password' => $this->input->post('loginPwd', TRUE));
+        $loginarray = array('email' => $this->input->post('loginEmail', TRUE), 'password' => sha1($this->input->post('loginPwd', TRUE)));
         $this->db->select('accountID')->from('account')->where($loginarray);
 
         $query = $this->db->get();

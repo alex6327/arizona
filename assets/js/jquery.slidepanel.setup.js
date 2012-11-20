@@ -2,8 +2,11 @@ $(document).ready(function() {
 	
 	// Expand Panel
 	$("#slideit").click(function(){
-		$("div#slidepanel").slideDown("slow");
-	
+                                            
+                                           
+                                            $("div#slidepanel").slideDown("slow");
+                                          
+                                         
 	});	
 	
 	// Collapse Panel

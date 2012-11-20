@@ -14,11 +14,13 @@
       </div>
       <div class="topbox">
         <h2>用户登录</h2>
-        <form action="account/login" method="post">
+        <form action="/account/login" method="post">
           <fieldset>
             <legend>Login Form</legend>
             <label for="loginEmail">电子邮箱:
-              <input type="text" name="loginEmail" id="loginEmail" value="" />
+              <?php 
+              echo form_input('loginEmail', set_value('loginEmail'), 'id="loginEmail"');
+              ?>
             </label>
             <label for="loginPwd">密码:
               <input type="password" name="loginPwd" id="loginPwd" value="" />
@@ -27,12 +29,17 @@
               <input class="checkbox" type="checkbox" name="userremember" id="userremember" checked="checked" />
               请记住我</label>
             <p>
+                <input type="hidden" name="pagebody" value=<?= $pagebody ?> />
+                <input type="hidden" name="pagetitle" value=<?= $pagetitle?> />
+                <input type="hidden" name="sitenavi" value=<?= $sitenavi ?> />
               <input type="submit" name="userlogin" id="userlogin" value="登录" />
               &nbsp;
               <a  id="forgetpass"  href="#" taget="_blank" />忘记密码？</a>
             </p>
           </fieldset>
         </form>
+        <div class="errors"><?php echo validation_errors(); ?>
+            </div>
       </div>
       <br class="clear" />
     </div>
