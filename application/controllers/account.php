@@ -8,10 +8,8 @@ class Account extends CI_Controller {
     }
     public function index()
     {
-        $username=$this->session->userdata('username');
-        echo 'hello';
-        echo $username;
-        if( !isset($username))
+        $useremail=$this->session->userdata('useremail');
+        if($useremail=='')
         {
             redirect('/');
         }
@@ -43,29 +41,35 @@ class Account extends CI_Controller {
         {
             $this->load->model('account_model');
             $query_result=$this->account_model->login();
+            $row = $query_result->row();
+            $accountName = $row->accountName;
             if($query_result->num_rows()>0)
             {
-                $this->session->set_userdata('username', $this->input->post('loginEmail',TRUE));
+                $this->session->set_userdata('username', $accountName);
+                $this->session->set_userdata('useremail', $this->input->post('loginEmail',TRUE));
                 $data['pagebody'] = $this->input->post('pagebody', TRUE);
                 $data['pagetitle']=$this->input->post('pagetitle', TRUE);
                 $data['sitenavi']=$this->input->post('sitenavi', TRUE);
                 $data['data']=&$data;
                 $this->load->view('template',$data);
+            }  else {
+                
             }
+        }else{
+            $data['slideDown']='TRUE';
+            $data['pagebody'] = $this->input->post('pagebody', TRUE);
+            $data['pagetitle']=$this->input->post('pagetitle', TRUE);
+            $data['sitenavi']=$this->input->post('sitenavi', TRUE);
+            $data['data']=&$data;
+            $this->load->view('template',$data);
         }
-        $data['slideDown']='TRUE';
-        $data['pagebody'] = $this->input->post('pagebody', TRUE);
-        $data['pagetitle']=$this->input->post('pagetitle', TRUE);
-        $data['sitenavi']=$this->input->post('sitenavi', TRUE);
-        $data['data']=&$data;
-        $this->load->view('template',$data);
-        
         
     }
     
     function logout()
     {
-        $this->session->userdata('username');
+        $this->session->sess_destroy();
+        
     }
 }
 

@@ -33,7 +33,7 @@ class Account_model extends CI_Model {
     function login()
     {
         $loginarray = array('email' => $this->input->post('loginEmail', TRUE), 'password' => sha1($this->input->post('loginPwd', TRUE)));
-        $this->db->select('accountID')->from('account')->where($loginarray);
+        $this->db->from('account')->where($loginarray);
 
         $query = $this->db->get();
         return $query;

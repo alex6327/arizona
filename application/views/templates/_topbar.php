@@ -25,16 +25,16 @@
             <label for="loginPwd">密码:
               <input type="password" name="loginPwd" id="loginPwd" value="" />
             </label>
-            <label for="userremember">
+            <!--<label for="userremember">
               <input class="checkbox" type="checkbox" name="userremember" id="userremember" checked="checked" />
-              请记住我</label>
+              请记住我</label>-->
             <p>
                 <input type="hidden" name="pagebody" value=<?= $pagebody ?> />
                 <input type="hidden" name="pagetitle" value=<?= $pagetitle?> />
                 <input type="hidden" name="sitenavi" value=<?= $sitenavi ?> />
               <input type="submit" name="userlogin" id="userlogin" value="登录" />
               &nbsp;
-              <a  id="forgetpass"  href="#" taget="_blank" />忘记密码？</a>
+              <a  id="forgetpass"  href="#" taget="_blank" >忘记密码？</a>
             </p>
           </fieldset>
         </form>

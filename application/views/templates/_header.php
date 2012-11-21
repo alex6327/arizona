@@ -8,7 +8,7 @@
 <div id="header">
     <div id="logo">
         <a title="www.biocompete.com" href="/welcome">
-        <img alt="" src="/assets/images/logo.gif">
+        <img alt="" src="/assets/images/logo.gif" />
         </a>
     </div>
     <div id="search">
