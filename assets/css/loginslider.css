@@ -141,6 +141,7 @@
 	}
 
 #loginpanel li.right{
+                    width: 82px;
 	float:right;
 	text-align:left;
 	padding-right:10px;
@@ -149,5 +150,6 @@
 
 #loginpanel a{
 	display:block;
-	width:100px;
+	width:41px;
+                    float: left;
 	}

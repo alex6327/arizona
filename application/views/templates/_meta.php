@@ -27,7 +27,9 @@ if(!defined('APPPATH'))
             }
         ?>
     </script>
-
+<script>
+    
+</script>
          <script>
         <?php 
         $username=$this->session->userdata('username');
@@ -42,6 +44,9 @@ if(!defined('APPPATH'))
                 echo "$(document).ready(function() {
         $('a#slideit').replaceWith( '<a href=\"#\">$username</a>' );
     });";
+                echo "$(document).ready(function(){
+                        $('li.right').append('<a href=\"/account/logout\">退出</a>');
+                    });";
             }
         ?>
     </script>   
@@ -49,7 +54,17 @@ if(!defined('APPPATH'))
     $(document).ready(function() {
     $("#menu").menu();
     });
-    
+    function validateEmail()
+    {
+    var x=document.getElementById("email").value;
+    var atpos=x.indexOf("@");
+    var dotpos=x.lastIndexOf(".");
+        if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length)
+        {
+            alert("Not a valid e-mail address");
+            return false;
+        }
+    }
   </script>
   
 </head>

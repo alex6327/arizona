@@ -235,6 +235,9 @@ div.wrapper h1, div.wrapper h2, div.wrapper h3, div.wrapper h4, div.wrapper h5, 
 #homecontent .register{
             height: 400px;
         }
+#homecontent .update{
+    height: 400px;
+}
 /* ----------------------------------------------Content-------------------------------------*/
 
 #content{
