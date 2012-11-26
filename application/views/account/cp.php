@@ -15,7 +15,7 @@
 <div id="homecontent">
     <div class="update">
     <h1>修改密码</h1>
-    <form id="updt_pwd" name="updt_pwd" method="post" action="update_password">
+    <form id="updt_pwd" name="updt_pwd" method="post" action="change_password">
           <table  border="0" cellpadding="3" cellspacing="0" bgcolor="#F5F5F5">
             
             <tr align="center">

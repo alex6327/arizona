@@ -34,7 +34,7 @@
                 <input type="hidden" name="sitenavi" value=<?= $sitenavi ?> />
               <input type="submit" name="userlogin" id="userlogin" value="登录" />
               &nbsp;
-              <a  id="forgetpass"  href="#" taget="_blank" >忘记密码？</a>
+              <a  id="forgetpass"  href="/account/forgot_password" taget="_blank" >忘记密码？</a>
             </p>
           </fieldset>
         </form>
@@ -45,8 +45,8 @@
     </div>
     <div id="topnav">
       <ul>
-        <li class="active"><a href="/welcome">主页</a></li>
-        <li><a href="#">产品</a></li>
+        <li class="active"><a href="/">主页</a></li>
+        <li><a href="/product">产品</a></li>
         <li><a href="#">企业</a></li>
         <li><a href="#">客服中心</a></li>
         <li class="last"><a href="#">网站导航</a></li>

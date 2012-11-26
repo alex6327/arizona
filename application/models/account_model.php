@@ -22,21 +22,37 @@ class Account_model extends CI_Model {
         
     }
 
-    function update_entry()
+    function update_entry($id,$email,$pwd,$newsletter,$newsletterCategory)
     {
-        $this->title   = $_POST['title'];
-        $this->content = $_POST['content'];
-        $this->date    = time();
+        $data = array(
+               'email' => $email,
+               'password' => sha1($pwd),
+               'newletter' => $newsletter,
+                'newsletterCategory' => $newsletterCategory
+            );
 
-        $this->db->update('entries', $this, array('id' => $_POST['id']));
+        $this->db->where('accountID', $id);
+        $this->db->update('account', $data); 
     }
-    function login()
+    function login($loginEmail,$loginPwd)
     {
-        $loginarray = array('email' => $this->input->post('loginEmail', TRUE), 'password' => sha1($this->input->post('loginPwd', TRUE)));
+        $loginarray = array('email' => $loginEmail, 'password' => sha1($loginPwd));
         $this->db->from('account')->where($loginarray);
 
         $query = $this->db->get();
         return $query;
     }
-
+    function  getPwd($email)
+    {
+        $this->db->from('account')->where('email', $email);
+        $query = $this->db->get();
+        if($query->num_rows()>0)
+        {
+            $row=$query->row();
+            return $row->password;
+        }else
+        {
+            return false;
+        }
+    }
 }
