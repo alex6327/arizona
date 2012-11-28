@@ -8,14 +8,22 @@
 
   <div id="container">
     <div id="content">
-      <h1>&lt;h1&gt; to &lt;h6&gt; - Headline Colour and Size Are All The Same</h1>
-      <img class="imgr" src="assets/images/demo/imgr.gif" alt="" width="125" height="125" />
-      <p>Aliquatjusto quisque nam consequat doloreet vest orna partur scetur portortis nam. Metadipiscing eget facilis elit sagittis felisi eger id justo maurisus convallicitur.</p>
-      <p>Dapiensociis <a href="#">temper donec auctortortis cumsan</a> et curabitur condis lorem loborttis leo. Ipsumcommodo libero nunc at in velis tincidunt pellentum tincidunt vel lorem.</p>
-      <img class="imgl" src="assets/images/demo/imgl.gif" alt="" width="125" height="125" />
-      <p>Temperinte interdum sempus odio urna eget curabitur semper convallis nunc laoreet. Nullain convallis ris <a href="#"><strong>elis vest liberos nis diculis</strong></a> feugiat in rutrum. Suspendreristibulumfaucibulum lobortor quis tortortor ris sapien sce enim et volutpat sus.</p>
-      <p>Urnaretiumorci orci <strong>fauctor leo justo nulla cras ridiculum</strong> eu id vitae. Etnon et dolor auctor eu loreet fring temper pend pede integestibus.</p>
-      <p>Portortornec condimenterdum eget consectetuer condis consequam pretium pellus sed mauris enim. Puruselit mauris nulla hendimentesque elit semper nam a sapien urna sempus.</p>
+        <div class="product" style="height: 500px;">
+      <?php echo form_open('cart/add'); ?>
+      <div class="name"><h1><?php echo $product->pname; ?></h1></div>
+      <div class="img">
+          <img class="imgl" src="/assets/images/demo/imgl.gif" alt="" width="125" height="125" />
+      </div>
+      <div class="price">
+          <?php echo $product->price; ?>
+      </div>
+      <div class="quantity">
+          <?php echo $product->quantity; ?>
+      </div>
+      <?php echo form_hidden('id', $product->catNo); ?>
+      <?php echo form_submit('action','Add to Cart'); ?>
+      <?php echo form_close(); ?>
+      </div>
       <h2>Table(s)</h2>
       <table summary="Summary Here" cellpadding="0" cellspacing="0">
         <thead>
@@ -57,17 +65,17 @@
         <h2>Comments</h2>
         <ul class="commentlist">
           <li class="comment_odd">
-            <div class="author"><img class="avatar" src="assets/images/demo/avatar.gif" width="32" height="32" alt="" /><span class="name"><a href="#">A Name</a></span> <span class="wrote">wrote:</span></div>
+            <div class="author"><img class="avatar" src="/assets/images/demo/avatar.gif" width="32" height="32" alt="" /><span class="name"><a href="#">A Name</a></span> <span class="wrote">wrote:</span></div>
             <div class="submitdate"><a href="#">August 4, 2009 at 8:35 am</a></div>
             <p>This is an example of a comment made on a post. You can either edit the comment, delete the comment or reply to the comment. Use this as a place to respond to the post or to share what you are thinking.</p>
           </li>
           <li class="comment_even">
-            <div class="author"><img class="avatar" src="assets/images/demo/avatar.gif" width="32" height="32" alt="" /><span class="name"><a href="#">A Name</a></span> <span class="wrote">wrote:</span></div>
+            <div class="author"><img class="avatar" src="/assets/images/demo/avatar.gif" width="32" height="32" alt="" /><span class="name"><a href="#">A Name</a></span> <span class="wrote">wrote:</span></div>
             <div class="submitdate"><a href="#">August 4, 2009 at 8:35 am</a></div>
             <p>This is an example of a comment made on a post. You can either edit the comment, delete the comment or reply to the comment. Use this as a place to respond to the post or to share what you are thinking.</p>
           </li>
           <li class="comment_odd">
-            <div class="author"><img class="avatar" src="assets/images/demo/avatar.gif" width="32" height="32" alt="" /><span class="name"><a href="#">A Name</a></span> <span class="wrote">wrote:</span></div>
+            <div class="author"><img class="avatar" src="/assets/images/demo/avatar.gif" width="32" height="32" alt="" /><span class="name"><a href="#">A Name</a></span> <span class="wrote">wrote:</span></div>
             <div class="submitdate"><a href="#">August 4, 2009 at 8:35 am</a></div>
             <p>This is an example of a comment made on a post. You can either edit the comment, delete the comment or reply to the comment. Use this as a place to respond to the post or to share what you are thinking.</p>
           </li>
@@ -122,7 +130,7 @@
         </ul>
       </div>
       <div class="holder">
-        <h2 class="title"><img src="assets/images/demo/60x60.gif" alt="" />Nullamlacus dui ipsum conseque loborttis</h2>
+        <h2 class="title"><img src="/assets/images/demo/60x60.gif" alt="" />Nullamlacus dui ipsum conseque loborttis</h2>
         <p>Nullamlacus dui ipsum conseque loborttis non euisque morbi penas dapibulum orna. Urnaultrices quis curabitur phasellentesque.</p>
         <p class="readmore"><a href="#">Continue Reading &raquo;</a></p>
       </div>
@@ -130,7 +138,7 @@
         <ul>
           <li>
             <h2>Indonectetus facilis leonib</h2>
-            <p class="imgholder"><img src="assets/images/demo/240x90.gif" alt="" /></p>
+            <p class="imgholder"><img src="/assets/images/demo/240x90.gif" alt="" /></p>
             <p>Nullamlacus dui ipsum conseque loborttis non euisque morbi penas dapibulum orna. Urnaultrices quis curabitur phasellentesque congue magnis vestibulum quismodo nulla et feugiat. Adipisciniapellentum leo ut consequam ris felit elit id nibh sociis malesuada.</p>
             <p class="readmore"><a href="#">Continue Reading &raquo;</a></p>
           </li>

@@ -15,6 +15,7 @@ class Account extends CI_Controller {
             redirect('/');
         }
            $this->load->view('test');
+           
     }
     function register()
     {
