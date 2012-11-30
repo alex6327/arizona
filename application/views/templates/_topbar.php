@@ -29,9 +29,10 @@
               <input class="checkbox" type="checkbox" name="userremember" id="userremember" checked="checked" />
               请记住我</label>-->
             <p>
-                <input type="hidden" name="pagebody" value=<?= $pagebody ?> />
-                <input type="hidden" name="pagetitle" value=<?= $pagetitle?> />
-                <input type="hidden" name="sitenavi" value=<?= $sitenavi ?> />
+                <input type="hidden" name="url" value='<?= current_url() ?>' />
+<!--                <input type="hidden" name="pagebody" value='<?= $pagebody ?>' />
+                <input type="hidden" name="pagetitle" value='<?= $pagetitle?>' />
+                <input type="hidden" name="sitenavi" value='<?= $sitenavi ?>' />-->
               <input type="submit" name="userlogin" id="userlogin" value="登录" />
               &nbsp;
               <a  id="forgetpass"  href="/account/forgot_password" taget="_blank" >忘记密码？</a>

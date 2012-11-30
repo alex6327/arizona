@@ -2,9 +2,20 @@
 
 class Cart extends CI_Controller{
     
+    function index(){
+            $data = array();
+            $data['pagetitle']='购物车';
+            $data['pagebody'] = 'cart/cart';
+            $data['sitenavi']='cart/cart_sitenavi';
+            $data['data']=&$data;
+            $this->load->view('template',$data);
+    }
+
+
     function add(){
         $data = array(
-            'id' => $this->input,
+            'id' => $this->input->post('id',TRUE
+                    ),
             'name' => 'Pants',
             'qty' => 1,
             'price' => 19.99,
@@ -12,7 +23,7 @@ class Cart extends CI_Controller{
             
         );
         $this->cart->insert($data);
-        echo 'ok';
+        redirect('/cart');
     }
     function show(){
         $cart = $this->cart->contents();

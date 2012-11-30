@@ -6,6 +6,7 @@ class Account extends CI_Controller {
     function __construct() {
         parent::__construct();
         $this->load->library('form_validation');
+        $this->session->set_userdata('loginFailed',0);
     }
     public function index()
     {
@@ -42,34 +43,13 @@ class Account extends CI_Controller {
             $this->register();
         }
     }
-    function previous_page()
-    {
-                $data =array();
-                $data['pagebody'] = $this->input->post('pagebody', TRUE);
-                $data['pagetitle']=$this->input->post('pagetitle', TRUE);
-                $data['sitenavi']=$this->input->post('sitenavi', TRUE);
-                $data['data']=&$data;
-                $this->load->view('template',$data);
-    }
     function login_page()
     {
             $data=array();
             $data['slideDown']='TRUE';
-            $pagebody = $this->input->post('pagebody', TRUE);
-            
-            if($pagebody=='')
-            {
-                $data['pagetitle']='生物产品仓库';
-                $data['pagebody'] = 'home';
-                $data['sitenavi']='slide';
-                
-            }
-            else
-            {
-                $data['pagebody'] = $pagebody;
-                $data['pagetitle']=$this->input->post('pagetitle', TRUE);
-                $data['sitenavi']=$this->input->post('sitenavi', TRUE);
-            }
+            $data['pagetitle']='生物产品仓库';
+            $data['pagebody'] = 'home';
+            $data['sitenavi']='slide';
             $data['data']=&$data;
             $this->load->view('template',$data);
     }
@@ -89,12 +69,23 @@ class Account extends CI_Controller {
                 $accountName = $row->accountName;
                 $this->session->set_userdata('username', $accountName);
                 $this->session->set_userdata('useremail', $this->input->post('loginEmail',TRUE));
-                $this->previous_page();
+                redirect($this->input->post('url', TRUE));
             }  else {
-                $this->login_page();
+                echo "<script language=javascript>alert('您的Email地址或者密码有错误');history.go(-1);</script>";
             }
         }else{
+            $loginFailed = $this->session->userdata('loginFailed');
+            echo $loginFailed;
+            $this->session->set_userdata('loginFailed','TRUE');
+//            if($loginFailed=='0'){
+//            
+//                $this->session->set_userdata('previousUrl',$this->input->post('url', TRUE));
+//            }
+//            $this->session->set_userdata('loginFailed','TRUE');
+//            $previousUrl = $this->session->userdata('loginFailed');
+//            echo $previousUrl;
             $this->login_page();
+            
         }
         
     }
@@ -124,12 +115,7 @@ class Account extends CI_Controller {
                $this->account_model->update_entry($row->accountID,$row->email,$newpwd,$row->newletter,$row->newsletterCategory);
             }else
             {
-                $data = array();
-                $data['pagetitle']='修改密码';
-                $data['pagebody'] = 'account/cp';
-                $data['sitenavi']='account/cp_sitenavi';
-                $data['data']=&$data;
-                $this->load->view('template',$data);
+                echo "<script language=javascript>alert('您的Email地址或者密码有错误');history.go(-1);</script>";
 
             }
 
