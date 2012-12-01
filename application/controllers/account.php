@@ -6,7 +6,7 @@ class Account extends CI_Controller {
     function __construct() {
         parent::__construct();
         $this->load->library('form_validation');
-        $this->session->set_userdata('loginFailed',0);
+       
     }
     public function index()
     {
@@ -55,35 +55,49 @@ class Account extends CI_Controller {
     }
     function login()
     {
-        
+        $useremail=$this->session->userdata('useremail');
+        if($useremail!='')
+        {
+            redirect('/');
+        }
         $this->form_validation->set_rules('loginEmail','Emal address','trim|required|valid_email');
         $this->form_validation->set_rules('loginPwd','Password','trim|required|min_length[4]');
         if($this->form_validation->run()!==false)
         {
             $this->load->model('account_model');
             $query_result=$this->account_model->login($this->input->post('loginEmail', TRUE),$this->input->post('loginPwd', TRUE));
-            
+            $previousUrl = $this->session->userdata('previousUrl');
             if($query_result->num_rows()>0)
             {
                 $row = $query_result->row();
                 $accountName = $row->accountName;
                 $this->session->set_userdata('username', $accountName);
                 $this->session->set_userdata('useremail', $this->input->post('loginEmail',TRUE));
-                redirect($this->input->post('url', TRUE));
+                
+                
+                if($previousUrl=='')
+                {
+                    redirect($this->input->post('url', TRUE));
+                }else
+                {
+                    redirect($previousUrl);
+                }
             }  else {
+                if($previousUrl=='')
+                {
                 echo "<script language=javascript>alert('您的Email地址或者密码有错误');history.go(-1);</script>";
+                }else
+                {
+                    echo "<script language=javascript>alert('您的Email地址或者密码有错误');history.go(-2);</script>";
+                }
             }
         }else{
-            $loginFailed = $this->session->userdata('loginFailed');
-            echo $loginFailed;
-            $this->session->set_userdata('loginFailed','TRUE');
-//            if($loginFailed=='0'){
-//            
-//                $this->session->set_userdata('previousUrl',$this->input->post('url', TRUE));
-//            }
-//            $this->session->set_userdata('loginFailed','TRUE');
-//            $previousUrl = $this->session->userdata('loginFailed');
-//            echo $previousUrl;
+            $loginStatus = $this->session->userdata('login');
+            if($loginStatus==''){
+            
+                $this->session->set_userdata('previousUrl',$this->input->post('url', TRUE));
+            }
+            $this->session->set_userdata('login','failed');
             $this->login_page();
             
         }
