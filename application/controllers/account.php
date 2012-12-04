@@ -83,6 +83,7 @@ class Account extends CI_Controller {
                     redirect($previousUrl);
                 }
             }  else {
+                 header('Content-Type:text/html;charset=utf-8');
                 if($previousUrl=='')
                 {
                 echo "<script language=javascript>alert('您的Email地址或者密码有错误');history.go(-1);</script>";

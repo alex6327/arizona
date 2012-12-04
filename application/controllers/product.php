@@ -9,9 +9,9 @@ class Product extends CI_Controller {
     public function index()
     {
         
-        
-        //echo '<pre>';
-        //print_r($data['products']);
+        $this->load->model('products_model');
+        echo '<pre>';
+        print_r($this->products_model->get_product('1','8','4441','Y058784'));
 
     }
     
