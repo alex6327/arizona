@@ -11,7 +11,7 @@ class Product extends CI_Controller {
         
         $this->load->model('products_model');
         echo '<pre>';
-        print_r($this->products_model->get_product('1','8','4441','Y058784'));
+        print_r($this->products_model->get_product('1','8','42','24'));
 
     }
     
@@ -19,7 +19,8 @@ class Product extends CI_Controller {
     {
             $data = array();
             $this->load->model('products_model');
-            $data['product'] = $this->products_model->get_one();
+            $data['product'] = $this->products_model->get_product('1','8','42','24');
+            $data['product_column'] = $this->products_model->get_product_column('1','8','42','24');
 //            echo '<pre>';
 //            print_r($data['product']);
 //            die();

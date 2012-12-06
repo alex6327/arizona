@@ -13,16 +13,24 @@ class Cart extends CI_Controller{
 
 
     function add(){
+        $id = $this->input->post('id',TRUE);
+        $price = $this->input->post('price',TRUE);
+        $name = $this->input->post('name',TRUE);
+        $table = $this->input->post('table',TRUE);
+        $id = $table."_".$id;
         $data = array(
-            'id' => $this->input->post('id',TRUE
-                    ),
-            'name' => 'Pants',
-            'qty' => 1,
-            'price' => 19.99,
-            'option' => array('Size' => 'medium')
-            
-        );
+               'id'      => $id,
+               'qty'     => 1,
+               'price'   => $price,
+               'name'    =>$name,
+                'options' => array('table' => $table)
+            );
+        $this->cart->product_name_rules ='[:print:]'; 
+        $this->cart->product_id_rules = '[:print:]'; 
         $this->cart->insert($data);
+        echo '<pre>';
+        print_r($this->cart->contents());
+        die();
         redirect('/cart');
     }
     function show(){

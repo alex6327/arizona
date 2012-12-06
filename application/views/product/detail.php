@@ -8,57 +8,81 @@
 
   <div id="container">
     <div id="content">
-        <div class="product" style="height: 500px;">
+        <div class="product">
       <?php echo form_open('cart/add'); ?>
-      <div class="name"><h1><?php echo $product->pname; ?></h1></div>
+      <div class="name"><h1><?php echo $product['Product Name']; ?></h1></div>
       <div class="img">
           <img class="imgl" src="/assets/images/demo/imgl.gif" alt="" width="125" height="125" />
       </div>
-      <div class="price">
-          <?php echo $product->price; ?>
+      <div>
+          <table class="product">
+            <tbody><tr>
+            <td width="80" >产 品：</td>
+            <td><strong><?php echo $product['Product Name']; ?></strong>&nbsp;</td>
+            </tr>
+            <tr>
+            <td>货 号：</td>
+            <td><?php echo $product['Cat.No.']; ?>&nbsp;</td>
+            </tr>
+            <tr>
+            <td>规 格：</td>
+            <td><?php echo $product['Quantity']; ?>&nbsp;</td>
+            </tr>
+            <tr>
+            <td>供应商：</td>
+            <td><?php echo $product['supplier']; ?>&nbsp;</td>
+            </tr>
+            <tr>
+            <td>单 价：</td>
+            <td><?php echo $product['Price']; ?>&nbsp;</td>
+            </tr>
+
+           
+            <tr>
+            <td colspan="2">
+            <?php echo form_hidden('id', $product['sn']); ?>
+            <?php echo form_hidden('name', $product['Product Name']); ?>
+            <?php echo form_hidden('price', $product['Price']); ?>
+            <?php echo form_hidden('table', $product['table']); ?>
+            <?php echo form_submit('action','Add to Cart'); ?>
+            <?php echo form_close(); ?>
+            </td>
+            </tr>
+            <!--end-->
+            </tbody></table>
+        </div>
+      
+      
       </div>
-      <div class="quantity">
-          <?php echo $product->quantity; ?>
-      </div>
-      <?php echo form_hidden('id', $product->catNo); ?>
-      <?php echo form_submit('action','Add to Cart'); ?>
-      <?php echo form_close(); ?>
-      </div>
-      <h2>Table(s)</h2>
-      <table summary="Summary Here" cellpadding="0" cellspacing="0">
+<!--      <h1>详细信息</h1>-->
+      <table class="product_information">
         <thead>
           <tr>
-            <th>Header 1</th>
-            <th>Header 2</th>
-            <th>Header 3</th>
-            <th>Header 4</th>
+            <th colspan='4'>产品信息</th>
+            
           </tr>
         </thead>
         <tbody>
-          <tr class="light">
-            <td>Value 1</td>
-            <td>Value 2</td>
-            <td>Value 3</td>
-            <td>Value 4</td>
-          </tr>
-          <tr class="dark">
-            <td>Value 5</td>
-            <td>Value 6</td>
-            <td>Value 7</td>
-            <td>Value 8</td>
-          </tr>
-          <tr class="light">
-            <td>Value 9</td>
-            <td>Value 10</td>
-            <td>Value 11</td>
-            <td>Value 12</td>
-          </tr>
-          <tr class="dark">
-            <td>Value 13</td>
-            <td>Value 14</td>
-            <td>Value 15</td>
-            <td>Value 16</td>
-          </tr>
+            <?php 
+                $i=1;
+                foreach($product_column as $column)
+                {
+                    if($product[$column] != '')
+                    {
+                        if($i%2 == 1){
+                        echo "<tr class='light'>";
+                        }  else {
+                            echo "<tr class='dark'>";
+                        }
+                    
+                        echo "<td class='left'>$column</td>";
+                        echo "<td>$product[$column]</td>";
+                        echo "</tr>";
+                        $i++;
+                    }
+                }
+            
+            ?>
         </tbody>
       </table>
       <div id="comments">
