@@ -15,12 +15,12 @@ class Product extends CI_Controller {
 
     }
     
-    function detail()
+    function detail($grpId,$catId,$ssn,$sn)
     {
             $data = array();
             $this->load->model('products_model');
-            $data['product'] = $this->products_model->get_product('1','8','42','24');
-            $data['product_column'] = $this->products_model->get_product_column('1','8','42','24');
+            $data['product'] = $this->products_model->get_product($grpId,$catId,$ssn,$sn);
+            $data['product_column'] = $this->products_model->get_product_column($grpId,$catId,$ssn,$sn);
 //            echo '<pre>';
 //            print_r($data['product']);
 //            die();

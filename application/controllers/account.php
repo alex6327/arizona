@@ -201,7 +201,7 @@ class Account extends CI_Controller {
     function logout()
     {
         $this->session->sess_destroy();
-        redirect('');
+        header('Location: ' . $_SERVER['HTTP_REFERER']);
     }
 }
 

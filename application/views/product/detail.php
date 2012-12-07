@@ -44,6 +44,8 @@
             <?php echo form_hidden('name', $product['Product Name']); ?>
             <?php echo form_hidden('price', $product['Price']); ?>
             <?php echo form_hidden('table', $product['table']); ?>
+            <?php echo form_hidden('quantity', $product['Quantity']); ?>
+             <?php echo form_input(array('name' => 'qty', 'value' => '1', 'maxlength' => '3', 'size' => '5')); ?>
             <?php echo form_submit('action','Add to Cart'); ?>
             <?php echo form_close(); ?>
             </td>

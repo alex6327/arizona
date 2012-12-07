@@ -4,20 +4,20 @@
 <table cellpadding="6" cellspacing="1" style="width:100%" border="0">
 
 <tr>
-  <th>QTY</th>
-  <th>Item Description</th>
-  <th style="text-align:right">Item Price</th>
-  <th style="text-align:right">Sub-Total</th>
+  <th>数量</th>
+  <th>产品信息</th>
+  <th style="text-align:right">价格</th>
+  <th style="text-align:right">小计</th>
 </tr>
 
 <?php $i = 1; ?>
 
 <?php foreach ($this->cart->contents() as $items): ?>
 
-	<?php echo form_hidden($i.'[rowid]', $items['rowid']); ?>
+	<?php echo form_hidden($i.'rowid', $items['rowid']); ?>
 
 	<tr>
-	  <td><?php echo form_input(array('name' => $i.'[qty]', 'value' => $items['qty'], 'maxlength' => '3', 'size' => '5')); ?></td>
+	  <td><?php echo form_input(array('name' => $i.'qty', 'value' => $items['qty'], 'maxlength' => '3', 'size' => '5')); ?></td>
 	  <td>
 		<?php echo $items['name']; ?>
 
@@ -44,11 +44,11 @@
 
 <tr>
   <td colspan="2"> </td>
-  <td class="right"><strong>Total</strong></td>
+  <td class="right"><strong>总计</strong></td>
   <td class="right">$<?php echo $this->cart->format_number($this->cart->total()); ?></td>
 </tr>
 
 </table>
 
-<p><?php echo form_submit('', 'Update your Cart'); ?></p>
+<p><?php echo form_submit('', '更新购物车'); ?><?php echo form_close(); ?></p>
 </div>
