@@ -71,11 +71,21 @@ class Products_model extends CI_Model {
         }
         return $result;
         
-            
-        
-        
     }
-
+    function get_category_rows($grpId,$catId)
+    {
+        $grpName =  $this->get_grpName($grpId);
+        $tblName = $grpName.'_'.$catId;
+        $query = $this->db->query("select * from $tblName");
+        return $query->num_rows();
+    }
+    function get_category($grpId,$catId)
+    {
+        $grpName =  $this->get_grpName($grpId);
+        $tblName = $grpName.'_'.$catId;
+        $query = $this->db->query("select * from $tblName");
+        return $query->num_rows();
+    }
 
 
 

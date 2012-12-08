@@ -18,4 +18,7 @@ class Pages extends CI_Controller {
             $this->load->view('templates/footer', $data);
 
         }
+        public function index()
+        {
+        }
 }
