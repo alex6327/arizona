@@ -41,31 +41,54 @@ class Product extends CI_Controller {
         $data['data']=&$data;
         $this->load->view('template',$data);
     }
-    function category($grpId,$catId,$alpha,$page)
+    function category($grpId,$catId)
     {
         $this->load->model('products_model');
         $this->load->library('pagination');
         $config['base_url'] = 'http://newwebsite/product/category';
         $config['total_rows'] = $this->products_model->get_category_rows($grpId,$catId);
-//        echo $config['total_rows'];
         $config['per_page'] = 60;
-        $config['num_links'] = 20;
-        $this->pagination->initialize($config);
-        $data['records'] = $this->products_model->get_category($grpId,$catId,$alpha,$page);
-        #page a, #page strong
-{
-	background: #e3e3e3;
-	padding: 4px 7px;
-	text-decoration:none;
-	border: 1px solid #cac9c9;
-	color: #292929;
-	font-size:13px;
-}
-#page strong, #page a:hover{
-	font-weight:normal;
-	background: #cac9c9;
-	
-}
+        $grpName =  $this->products_model->get_grpName($grpId);
+        $catName = $this->products_model->get_catName($grpName,$catId);
+        if($config['total_rows']>$config['per_page'])
+        {
+            $config['num_links'] = 20;
+            $alpha = urldecode($this->uri->segment(5, 'A'));
+            $page = $this->uri->segment(6,1);
+            $this->pagination->initialize($config);
+            $data['records'] = $this->products_model->get_category($grpId,$catId,$alpha,$page,$config['per_page']);
+            $data['catName'] =$catName;
+            $data['pagetitle']=$catName;
+            $data['pagebody'] = '/product/category';
+            $data['sitenavi']='/product/category_sitenavi';
+            $data['alpha'] = $alpha;
+            $alphabeta = array (1=>'α',2=>'β',3=>'γ',4=>'δ',5=>'ε',6=>'ζ',7=>'η',8=>'θ',9=>'ι',10=>'κ',11=>'λ',
+						 12=>'μ',13=>'ν',14=>'ξ',15=>'ο',16=>'π',17=>'ρ',18=>'ς',19=>'σ',20=>'τ',21=>'υ',
+						 22=>'φ',23=>'χ',24=>'ψ',
+						 25=>'0',26=>'1',27=>'2',28=>'3',29=>'4',30=>'5',31=>'6',32=>'7',33=>'8',34=>'9',
+						 35=>'A',36=>'B',37=>'C',38=>'D',39=>'E',40=>'F',41=>'G',42=>'H',43=>'I',44=>'J',
+						 45=>'K',46=>'L',47=>'M',48=>'N',49=>'O',50=>'P',51=>'Q',52=>'R',53=>'S',54=>'T',
+						 55=>'U',56=>'V',57=>'W',58=>'X',59=>'Y',60=>'Z');
+            $i = 0;
+            foreach ($alphabeta as $letter) {
+                $num_rows = $this->products_model->get_category_rows($grpId,$catId,$letter);
+                if($num_rows>0)
+                {
+                    $data['alphabeta'][$i++] = $letter;
+                }
+            }
+            
+            $data['data']=&$data;
+            $this->load->view('template',$data);
+        }  else {
+            
+        }
+        
         
     }
+    function test()
+        {
+        echo urlencode("α");
+            echo urldecode("%CE%B1");
+        }
 }
