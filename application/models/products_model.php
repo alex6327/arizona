@@ -87,12 +87,17 @@ class Products_model extends CI_Model {
         }
         return $query->num_rows();
     }
-    function get_category($grpId,$catId,$alpha,$page,$perPage)
+    function get_category($grpId,$catId,$page,$perPage,$alpha=NULL)
     {
         $grpName =  $this->get_grpName($grpId);
         $tblName = $grpName.'_'.$catId;
         $offset=($page-1)*$perPage;
-        $query = $this->db->query("select * from $tblName where sname like '".$alpha."%' order by sname LIMIT $offset ,$perPage");
+        if($alpha==NULL)
+        {
+            $query = $this->db->query("select * from $tblName order by sname LIMIT $offset,$perPage");
+        }else{
+            $query = $this->db->query("select * from $tblName where sname like '".$alpha."%' order by sname LIMIT $offset ,$perPage");
+        }
         return $query->result_array();
     }
 

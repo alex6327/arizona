@@ -4,6 +4,7 @@
     <h1>
         <?=$catName ?>
     </h1>
+      <?php if($alphaList == TRUE): ?>
       <p class ="category" style ="margin-left: 10px; font-size: 12px;">
       <?php     foreach ($alphabeta as $letter): ?>
           
@@ -14,12 +15,14 @@
       <?php endif; ?>
       <?php    endforeach; ?>
             </p>
+            <?php endif; ?>
             <?php foreach($records as $item): ?>
       <ul style="font-family:Arial, Helvetica, sans-serif;font-size:12px;line-height:20px;width:250px;">
-          <li><a  href="prodlist-8.php?grpid=1&catid=8&gnname=A1 Adenosine Receptor&alpha=A">
+          <li><a  href="">
       <?=$item['sname']; ?>
     </a></li>
       </ul>  
       <?php endforeach; ?>
-      
+            
+      <?php echo $pagination; ?>
   </div>
