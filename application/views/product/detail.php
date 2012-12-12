@@ -5,7 +5,6 @@
  * and open the template in the editor.
  */
 ?>
-
   <div id="container">
     <div id="content">
         <div class="product">

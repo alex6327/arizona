@@ -13,7 +13,7 @@ class Products_model extends CI_Model {
         }
         return $results;
     }
-    function get_product($grpId,$catId,$ssn,$sn){
+    function get_product($grpId,$catId,$ssn,$sn=NULL){
         
         $grpName =  $this->get_grpName($grpId);
         $catName = $this->get_catName($grpName, $catId);
@@ -24,16 +24,25 @@ class Products_model extends CI_Model {
         }else {
             $query_table = $grpName."_".$catId."_".$ssn."_prod";
         }
-        $query =  $this->db->query("select * from $query_table where sn = $sn;");
-        
-        if ($query->num_rows() > 0){
+        if($sn ==NULL)
+        {
+            $query =  $this->db->query("select * from $query_table where ssn = $ssn;");
+            if ($query->num_rows() > 0){
+                $result = $query->result_array();
+                return $result;
+            }
+        }else{
+            $query =  $this->db->query("select * from $query_table where sn = $sn;");
+            if ($query->num_rows() > 0){
                 $row = $query->row_array();
                 $row['catName'] = $catName;
                 $row['grpName'] = $grpName;
                 $row['subCatName'] = $this->get_subCatName($grpName."_".$catId, $ssn);
                 $row['table'] = $query_table;
                 return $row;
+            }
         }
+        
     }
     function verify_table($tblName)
     {

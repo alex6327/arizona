@@ -1,6 +1,6 @@
 
 
-  <div id="container">
+ <div id="container">
     <h1>
         <?=$catName ?>
     </h1>
@@ -16,13 +16,44 @@
       <?php    endforeach; ?>
             </p>
             <?php endif; ?>
-            <?php foreach($records as $item): ?>
-      <ul style="font-family:Arial, Helvetica, sans-serif;font-size:12px;line-height:20px;width:250px;">
-          <li><a  href="">
-      <?=$item['sname']; ?>
-    </a></li>
-      </ul>  
-      <?php endforeach; ?>
+            <?php 
+                echo "<table>";
+                $counter = 0;
+                foreach ($records as $item) 
+                {
+                    if($counter%3 == 0)
+                    {
+                        echo "<tr>";
+                        echo "<td>";
+                        $content = $item['sname'];
+                        $counter++;
+                        echo "<a href='/product/listing/".$grpId."/".$catId."/".$item['sn']."'>$content</a>";
+                        echo "</td>";
+                    }else if($counter%3 == 2)
+                    {
+                        echo "<td>";
+                        $content = $item['sname'];
+                        $counter++;
+                        echo "<a href='/product/listing/".$grpId."/".$catId."/".$item['sn']."'>$content</a>";
+                        echo "</td>";
+                        echo "</tr>";
+                    }else
+                    {
+                        echo "<td>";
+                        $content = $item['sname'];
+                        $counter++;
+                        echo "<a href='/product/listing/".$grpId."/".$catId."/".$item['sn']."'>$content</a>";
+                        echo "</td>";
+                    }
+                     
+                }
+                echo "</table>";
+              
+                
+            
+            ?>
+            
             
       <?php echo $pagination; ?>
+            
   </div>

@@ -29,7 +29,6 @@
     </tr>
     </tbody></table>
     </div>
-    
     <?php foreach($products as $product): ?>
         
     <div class="list" id="">
@@ -42,23 +41,23 @@
     <td align="left" valign="top">
     <ul>
     <li>
-        <a href="" class="" title="<?php echo $product->pname; ?>" target="_blank"><?php echo $product->pname; ?></a>
+        <a href="/product/detail/<?=$grpId; ?>/<?=$catId; ?>/<?=$ssn; ?>/<?=$product['sn']; ?>" class="" title="<?php echo $product['Product Name']; ?>" target="_blank"><?php echo $product['Product Name']; ?></a>
     </li>
 <!--    <li style="color:#949494; margin:3px 0;">
      <?php //echo $product->description; ?></li>-->
     <li>
     <span class="">
     </span>
-    <a href="" target="_blank" class=""><?php echo $product->supplier; ?></a>&nbsp;
+    <a href="" target="_blank" class=""><?php echo $product['supplier']; ?></a>&nbsp;
     <span class="">
     </span>
     </li>
     </ul>
     </td>
     <td width="20"> </td>
-            <td align="left" width="140"><span class="">分类：</span><a href="" target="_blank" class="green"><?php echo $product->category; ?></a></td>
+            <td align="left" width="140"><span class="">分类：</span><a href="" target="_blank" class="green"><?php echo $catName; ?></a></td>
     <td width="150"> 
-    <span class=""><strong class="px14"><?php echo $product->price; ?></strong><br /><?php echo $product->quantity; ?></span><br>
+    <span class=""><strong class="px14"><?php echo $product['Price']; ?></strong><br /><?php echo $product['Quantity']; ?></span><br>
     </td>
     </tr>
     </tbody></table>

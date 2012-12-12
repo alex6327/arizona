@@ -30,14 +30,19 @@ class Product extends CI_Controller {
             $data['data']=&$data;
             $this->load->view('template',$data);
     }
-    function listing()
+    function listing($grpId,$catId,$ssn)
     {
         $data = array();
         $this->load->model('products_model');
-        $data['products'] = $this->products_model->get_antibody();
+        $grpName =  $this->products_model->get_grpName($grpId);
+        $data['products'] = $this->products_model->get_product($grpId,$catId,$ssn);
+       $data['catName'] =$this->products_model->get_catName($grpName, $catId);
         $data['pagetitle']='产品列表';
         $data['pagebody'] = '/product/list';
         $data['sitenavi']='/product/list_sitenavi';
+        $data['grpId'] = $grpId;
+        $data['catId'] = $catId;
+        $data['ssn'] = $ssn;
         $data['data']=&$data;
         $this->load->view('template',$data);
     }
@@ -68,6 +73,7 @@ class Product extends CI_Controller {
             $config['base_url'] = "http://newwebsite/product/category/$grpId/$catId/$alpha";
             $config['total_rows'] = $this->products_model->get_category_rows($grpId,$catId,$alpha);
             $config['per_page'] = 60;
+            $data['per_page']=$config['per_page'];
             $config['use_page_numbers'] = TRUE;
             $config['uri_segment'] = 6;
             $config['num_links'] = $this->products_model->get_category_rows($grpId,$catId,$alpha)/$config['per_page'];
@@ -81,7 +87,10 @@ class Product extends CI_Controller {
             $data['alpha'] = $alpha;
             $this->pagination->initialize($config);
             $data['pagination'] = $this->pagination->create_links();
+            $data['grpId']= $grpId;
+            $data['catId'] = $catId;
             $data['data']=&$data;
+            
             $this->load->view('template',$data);
         }else {
             $data['alphaList'] = FALSE;
@@ -89,6 +98,7 @@ class Product extends CI_Controller {
             $config['base_url'] = "http://newwebsite/product/category/$grpId/$catId/";
             $config['total_rows'] = $this->products_model->get_category_rows($grpId,$catId);
             $config['per_page'] = 60;
+            $data['per_page']=$config['per_page'];
             $config['use_page_numbers'] = TRUE;
             $config['uri_segment'] = 5;
             $config['num_links'] = $this->products_model->get_category_rows($grpId,$catId)/$config['per_page'];
@@ -101,6 +111,8 @@ class Product extends CI_Controller {
             $data['sitenavi']='/product/category_sitenavi';
             $this->pagination->initialize($config);
             $data['pagination'] = $this->pagination->create_links();
+            $data['grpId']= $grpId;
+            $data['catId'] = $catId;
             $data['data']=&$data;
             $this->load->view('template',$data);
         }
