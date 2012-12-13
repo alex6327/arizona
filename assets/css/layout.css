@@ -5,7 +5,6 @@
 @import url(tables.css);
 @import url(featured_slide.css);
 @import url(loginslider.css);
-@import url(category_menu.css);
 
 body{
 	margin:0;
@@ -153,7 +152,19 @@ div.wrapper h1, div.wrapper h2, div.wrapper h3, div.wrapper h4, div.wrapper h5, 
 	background-color:#FFFFFF;
 	border-bottom:1px dotted #999999;
 	}
-
+#container div#pagniation a, #pagniation strong
+{
+    background: #E3E3E3;
+    padding: 4px 7px;
+    text-decoration: none;
+    border: 1px solid #CAC9C9;
+    color: #292929;
+    font-size: 13px;
+}
+#pagniation strong{
+    font-weight: normal;
+    background: #CAC9C9;
+}
 /* ----------------------------------------------Homepage-------------------------------------*/
 
 #homecontent{

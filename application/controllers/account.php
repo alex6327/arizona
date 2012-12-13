@@ -53,6 +53,11 @@ class Account extends CI_Controller {
             $data['data']=&$data;
             $this->load->view('template',$data);
     }
+    function verify()
+    {
+        echo $this->input->post('email', TRUE);
+        echo $this->input->post('password', TRUE);
+    }
     function login()
     {
         $useremail=$this->session->userdata('useremail');
@@ -203,6 +208,8 @@ class Account extends CI_Controller {
         $this->session->sess_destroy();
         header('Location: ' . $_SERVER['HTTP_REFERER']);
     }
+
+
 }
 
 /* End of file welcome.php */

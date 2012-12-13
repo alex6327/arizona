@@ -1,54 +1,54 @@
 <div id="container">
-<?php echo form_open('cart/update'); ?>
+    <?php echo form_open('cart/update'); ?>
 
-<table cellpadding="6" cellspacing="1" style="width:100%" border="0">
+    <table cellpadding="6" cellspacing="1" style="width:100%" border="0">
 
-<tr>
-  <th>数量</th>
-  <th>产品信息</th>
-  <th style="text-align:right">价格</th>
-  <th style="text-align:right">小计</th>
-</tr>
+        <tr>
+            <th>数量</th>
+            <th>产品信息</th>
+            <th style="text-align:right">价格</th>
+            <th style="text-align:right">小计</th>
+        </tr>
 
-<?php $i = 1; ?>
+        <?php $i = 1; ?>
 
-<?php foreach ($this->cart->contents() as $items): ?>
+        <?php foreach ($this->cart->contents() as $items): ?>
 
-	<?php echo form_hidden($i.'rowid', $items['rowid']); ?>
+            <?php echo form_hidden($i . 'rowid', $items['rowid']); ?>
 
-	<tr>
-	  <td><?php echo form_input(array('name' => $i.'qty', 'value' => $items['qty'], 'maxlength' => '3', 'size' => '5')); ?></td>
-	  <td>
-		<?php echo $items['name']; ?>
+            <tr>
+                <td><?php echo form_input(array('name' => $i . 'qty', 'value' => $items['qty'], 'maxlength' => '3', 'size' => '5')); ?></td>
+                <td>
+                    <?php echo $items['name']; ?>
 
-			<?php if ($this->cart->has_options($items['rowid']) == TRUE): ?>
+                    <?php if ($this->cart->has_options($items['rowid']) == TRUE): ?>
 
-				<p>
-					<?php foreach ($this->cart->product_options($items['rowid']) as $option_name => $option_value): ?>
+                        <p>
+                            <?php foreach ($this->cart->product_options($items['rowid']) as $option_name => $option_value): ?>
 
-						<strong><?php echo $option_name; ?>:</strong> <?php echo $option_value; ?><br />
+                                <strong><?php echo $option_name; ?>:</strong> <?php echo $option_value; ?><br />
 
-					<?php endforeach; ?>
-				</p>
+                            <?php endforeach; ?>
+                        </p>
 
-			<?php endif; ?>
+                    <?php endif; ?>
 
-	  </td>
-	  <td style="text-align:right"><?php echo $this->cart->format_number($items['price']); ?></td>
-	  <td style="text-align:right">$<?php echo $this->cart->format_number($items['subtotal']); ?></td>
-	</tr>
+                </td>
+                <td style="text-align:right"><?php echo $this->cart->format_number($items['price']); ?></td>
+                <td style="text-align:right">$<?php echo $this->cart->format_number($items['subtotal']); ?></td>
+            </tr>
 
-<?php $i++; ?>
+            <?php $i++; ?>
 
-<?php endforeach; ?>
+        <?php endforeach; ?>
 
-<tr>
-  <td colspan="2"> </td>
-  <td class="right"><strong>总计</strong></td>
-  <td class="right">$<?php echo $this->cart->format_number($this->cart->total()); ?></td>
-</tr>
+        <tr>
+            <td colspan="2"> </td>
+            <td class="right"><strong>总计</strong></td>
+            <td class="right">$<?php echo $this->cart->format_number($this->cart->total()); ?></td>
+        </tr>
 
-</table>
+    </table>
 
-<p><?php echo form_submit('', '更新购物车'); ?><?php echo form_close(); ?></p>
+    <p><?php echo form_submit('', '更新购物车'); ?><?php echo form_close(); ?></p>
 </div>
