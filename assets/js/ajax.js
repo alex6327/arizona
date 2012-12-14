@@ -14,9 +14,14 @@ $(document).ready(function() {
             type: 'POST',
             data: form_data,
             success: function(msg){
-                alert(msg);
-            }
-        
+                if(msg == 'TRUE')
+                    {
+                        location.reload();
+                    }else{
+                        $("p.error").text(msg);
+                    }
+            },
+            dataType: "text"
         });
         return false;
     });
