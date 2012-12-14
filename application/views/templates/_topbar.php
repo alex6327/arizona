@@ -13,7 +13,7 @@
         </div>
         <div class="topbox">
             <h2>用户登录</h2>
-            <form action="/account/login" method="post">
+            <form action="/account/verify" method="post">
                 <fieldset>
                     <legend>Login Form</legend>
                     <label for="loginEmail">电子邮箱:
