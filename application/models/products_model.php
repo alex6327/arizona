@@ -135,4 +135,16 @@ class Products_model extends CI_Model {
         return FALSE;
     }
 
+    function get_grpNames() {
+        $query = $this->db->query("select * from groups;");
+        return $query->result_array();
+    }
+
+    function get_catNames($grpId) {
+        $grpName = $this->get_grpName($grpId);
+        $query = $this->db->query("SELECT * FROM $grpName;");
+        return $query->result_array();
+        
+    }
+
 }

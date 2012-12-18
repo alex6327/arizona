@@ -7,78 +7,134 @@
 <div id="slide">
 
     <div id="category_menu">
-        <ul id="menu">
-            <li><a href="#">科研仪器、实验设备</a>
-                <ul>
-                    <li><a href="#">常用仪器</a></li>
-                    <li><a href="#">光谱系统</a></li>
-                    <li><a href="#">色谱系统</a></li>
-                    <li><a href="#">测试分析</a></li>
-                    <li><a href="#">核酸基因</a></li>
-                    <li><a href="#">常用仪器</a></li>
-                    <li><a href="#">光谱系统</a></li>
-                    <li><a href="#">色谱系统</a></li>
-                    <li><a href="#">测试分析</a></li>
-                    <li><a href="#">核酸基因</a></li>
-                </ul>
-            </li>
-            <li><a href="#">生物科研试剂</a>
-                <ul>
-                    <li><a href="#">常用仪器</a></li>
-                    <li><a href="#">光谱系统</a></li>
-                    <li><a href="#">色谱系统</a></li>
-                    <li><a href="#">测试分析</a></li>
-                    <li><a href="#">核酸基因</a></li>
-                    <li><a href="#">常用仪器</a></li>
-                    <li><a href="#">光谱系统</a></li>
-                    <li><a href="#">色谱系统</a></li>
-                    <li><a href="#">测试分析</a></li>
-                    <li><a href="#">核酸基因</a></li>
-                </ul>
-            </li>
-            <li><a href="#">临床医疗器械</a>
-                <ul>
-                    <li><a href="#">常用仪器</a></li>
-                    <li><a href="#">光谱系统</a></li>
-                    <li><a href="#">色谱系统</a></li>
-                    <li><a href="#">测试分析</a></li>
-                    <li><a href="#">核酸基因</a></li>
-                    <li><a href="#">常用仪器</a></li>
-                    <li><a href="#">光谱系统</a></li>
-                    <li><a href="#">色谱系统</a></li>
-                    <li><a href="#">测试分析</a></li>
-                    <li><a href="#">核酸基因</a></li>
-                </ul>
-            </li>
-            <li><a href="#">制药原料、诊断原料</a>
-                <ul>
-                    <li><a href="#">常用仪器</a></li>
-                    <li><a href="#">光谱系统</a></li>
-                    <li><a href="#">色谱系统</a></li>
-                    <li><a href="#">测试分析</a></li>
-                    <li><a href="#">核酸基因</a></li>
-                    <li><a href="#">常用仪器</a></li>
-                    <li><a href="#">光谱系统</a></li>
-                    <li><a href="#">色谱系统</a></li>
-                    <li><a href="#">测试分析</a></li>
-                    <li><a href="#">核酸基因</a></li>
-                </ul>
-            </li>
-            <li><a href="#">体外诊断试剂</a>
-                <ul>
-                    <li><a href="#">常用仪器</a></li>
-                    <li><a href="#">光谱系统</a></li>
-                    <li><a href="#">色谱系统</a></li>
-                    <li><a href="#">测试分析</a></li>
-                    <li><a href="#">核酸基因</a></li>
-                    <li><a href="#">常用仪器</a></li>
-                    <li><a href="#">光谱系统</a></li>
-                    <li><a href="#">色谱系统</a></li>
-                    <li><a href="#">测试分析</a></li>
-                    <li><a href="#">核酸基因</a></li>
-                </ul>
-            </li>
-        </ul>
+        <div id="tabs">
+            <ul>
+                <li><a href="#tabs-1"><?= $grpNames[0]['Group Name']; ?></a></li>
+                <li><a href="#tabs-2"><?= $grpNames[1]['Group Name']; ?></a></li>
+                <li><a href="#tabs-3"><?= $grpNames[2]['Group Name']; ?></a></li>
+                <li><a href="#tabs-4"><?= $grpNames[3]['Group Name']; ?></a></li>
+            </ul>
+            <div id="tabs-1">
+                <?php
+                echo "<table>";
+                $counter = 0;
+                foreach ($reagents as $item) {
+                    if ($counter % 3 == 0) {
+                        echo "<tr>";
+                        echo "<td>";
+                        $content = $item['cname'];
+                        $counter++;
+                        echo "<a href='/product/category/1/".$item['Category ID']."'>$content</a>";
+                        echo "</td>";
+                    } else if ($counter % 3 == 2) {
+                        echo "<td>";
+                        $content = $item['cname'];
+                        $counter++;
+                        echo "<a href='/product/category/1/".$item['Category ID']."'>$content</a>";
+                        echo "</td>";
+                        echo "</tr>";
+                    } else {
+                        echo "<td>";
+                        $content = $item['cname'];
+                        $counter++;
+                        echo "<a href='/product/category/1/".$item['Category ID']."'>$content</a>";
+                        echo "</td>";
+                    }
+                }
+                echo "</table>";
+                ?>
+            </div>
+            <div id="tabs-2">
+                <?php
+                echo "<table>";
+                $counter = 0;
+                foreach ($services as $item) {
+                    if ($counter % 3 == 0) {
+                        echo "<tr>";
+                        echo "<td>";
+                        $content = $item['cname'];
+                        $counter++;
+                        echo "<a href='/product/category/2/".$item['Category ID']."'>$content</a>";
+                        echo "</td>";
+                    } else if ($counter % 3 == 2) {
+                        echo "<td>";
+                        $content = $item['cname'];
+                        $counter++;
+                        echo "<a href='/product/category/2/".$item['Category ID']."'>$content</a>";
+                        echo "</td>";
+                        echo "</tr>";
+                    } else {
+                        echo "<td>";
+                        $content = $item['cname'];
+                        $counter++;
+                        echo "<a href='/product/category/2/".$item['Category ID']."'>$content</a>";
+                        echo "</td>";
+                    }
+                }
+                echo "</table>";
+                ?>
+            </div>
+            <div id="tabs-3">
+                <?php
+                echo "<table>";
+                $counter = 0;
+                foreach ($equipments as $item) {
+                    if ($counter % 3 == 0) {
+                        echo "<tr>";
+                        echo "<td>";
+                        $content = $item['cname'];
+                        $counter++;
+                        echo "<a href='/product/category/3/".$item['Category ID']."'>$content</a>";
+                        echo "</td>";
+                    } else if ($counter % 3 == 2) {
+                        echo "<td>";
+                        $content = $item['cname'];
+                        $counter++;
+                        echo "<a href='/product/category/3/".$item['Category ID']."'>$content</a>";
+                        echo "</td>";
+                        echo "</tr>";
+                    } else {
+                        echo "<td>";
+                        $content = $item['cname'];
+                        $counter++;
+                        echo "<a href='/product/category/3/".$item['Category ID']."'>$content</a>";
+                        echo "</td>";
+                    }
+                }
+                echo "</table>";
+                ?>
+            </div>
+            <div id="tabs-4">
+                <?php
+                echo "<table>";
+                $counter = 0;
+                foreach ($softwares as $item) {
+                    if ($counter % 3 == 0) {
+                        echo "<tr>";
+                        echo "<td>";
+                        $content = $item['cname'];
+                        $counter++;
+                        echo "<a href='/product/category/4/".$item['Category ID']."'>$content</a>";
+                        echo "</td>";
+                    } else if ($counter % 3 == 2) {
+                        echo "<td>";
+                        $content = $item['cname'];
+                        $counter++;
+                        echo "<a href='/product/category/4/".$item['Category ID']."'>$content</a>";
+                        echo "</td>";
+                        echo "</tr>";
+                    } else {
+                        echo "<td>";
+                        $content = $item['cname'];
+                        $counter++;
+                        echo "<a href='/product/category/4/".$item['Category ID']."'>$content</a>";
+                        echo "</td>";
+                    }
+                }
+                echo "</table>";
+                ?>
+            </div>
+        </div>
 
     </div>
     <div id="featured_slide">

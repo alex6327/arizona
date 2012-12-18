@@ -47,7 +47,7 @@ if ($username == '') {
     </script>   
     <script type="text/javascript">
         $(document).ready(function() {
-            $("#menu").menu();
+            $("#tabs").tabs();
         });
         function validateEmail()
         {

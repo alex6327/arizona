@@ -26,6 +26,12 @@ class Welcome extends CI_Controller {
 
     public function index() {
         $data = array();
+        $this->load->model('products_model');
+        $data['grpNames'] = $this->products_model->get_grpNames();
+        $data['reagents'] = $this->products_model->get_catNames('1');
+        $data['services'] = $this->products_model->get_catNames('2');
+        $data['equipments'] = $this->products_model->get_catNames('3');
+        $data['softwares'] = $this->products_model->get_catNames('4');
         $data['pagetitle'] = '生物产品仓库';
         $data['pagebody'] = 'home';
         $data['sitenavi'] = 'slide';
