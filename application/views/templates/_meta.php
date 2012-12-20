@@ -25,7 +25,7 @@ if (isset($slideDown)) {
 }
 ?>
     </script>
-    
+
     <script>
 <?php
 $username = $this->session->userdata('username');
@@ -49,6 +49,10 @@ if ($username == '') {
         $(document).ready(function() {
             $("#tabs").tabs();
         });
+        $(function() {
+            $( "#accordion" ).accordion();
+        });
+    
         function validateEmail()
         {
             var x=document.getElementById("email").value;

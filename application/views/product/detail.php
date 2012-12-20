@@ -126,29 +126,25 @@
         </div>
     </div>
     <div id="column">
-        <div class="subnav">
-            <h2>Secondary Navigation</h2>
-            <ul>
-                <li><a href="#">免费网页模板</a></li>
-                <li><a href="#">Free CSS Templates</a>
-                    <ul>
-                        <li><a href="#">Free XHTML Templates</a></li>
-                        <li><a href="#">Free Website Templates</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">Open Source Layouts</a>
-                    <ul>
-                        <li><a href="#">Open Source Software</a></li>
-                        <li><a href="#">Open Source Webdesign</a>
-                            <ul>
-                                <li><a href="#">Open Source Downloads</a></li>
-                                <li><a href="#">Open Source Website</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-                <li><a href="#">Open Source Themes</a></li>
-            </ul>
+        <div id="accordion">
+            <p>Secondary Navigation</p>
+            <div><p>asdjfhajksh hwejshaflkjshfdjashfdhsaldfjhhsdlahfuiwryoqwjlbcas,ngbhasfglsdhajjhfasjdfljas
+                asdfjasdkfjwierqdcnsakjfdhasd
+                fasdfjhasjdfhajlskdhflkasdhfldjskahflkjdsahfljkashdfuiwehrwqblkhdaslbflkjhcvlbnlfjsadljbelwuisdlaf
+                asdjkfhasjdhflkjashdfljhasldk
+                sadjfhasjdf
+                asdjfhasjkhdflkj
+                
+                </p>
+            </div>
+            <p>Secondary Navigation</p>
+            <div>
+                asdfsadfasf
+            </div>
+            <p>Secondary Navigation</p>
+            <div>
+                sdfasfas
+            </div>
         </div>
         <div class="holder">
             <h2 class="title"><img src="/assets/images/demo/60x60.gif" alt="" />Nullamlacus dui ipsum conseque loborttis</h2>

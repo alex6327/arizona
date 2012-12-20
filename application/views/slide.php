@@ -24,20 +24,20 @@
                         echo "<td>";
                         $content = $item['cname'];
                         $counter++;
-                        echo "<a href='/product/category/1/".$item['Category ID']."'>$content</a>";
+                        echo "<a href='/product/category/1/" . $item['Category ID'] . "'>$content</a>";
                         echo "</td>";
                     } else if ($counter % 3 == 2) {
                         echo "<td>";
                         $content = $item['cname'];
                         $counter++;
-                        echo "<a href='/product/category/1/".$item['Category ID']."'>$content</a>";
+                        echo "<a href='/product/category/1/" . $item['Category ID'] . "'>$content</a>";
                         echo "</td>";
                         echo "</tr>";
                     } else {
                         echo "<td>";
                         $content = $item['cname'];
                         $counter++;
-                        echo "<a href='/product/category/1/".$item['Category ID']."'>$content</a>";
+                        echo "<a href='/product/category/1/" . $item['Category ID'] . "'>$content</a>";
                         echo "</td>";
                     }
                 }
@@ -54,20 +54,20 @@
                         echo "<td>";
                         $content = $item['cname'];
                         $counter++;
-                        echo "<a href='/product/category/2/".$item['Category ID']."'>$content</a>";
+                        echo "<a href='/product/category/2/" . $item['Category ID'] . "'>$content</a>";
                         echo "</td>";
                     } else if ($counter % 3 == 2) {
                         echo "<td>";
                         $content = $item['cname'];
                         $counter++;
-                        echo "<a href='/product/category/2/".$item['Category ID']."'>$content</a>";
+                        echo "<a href='/product/category/2/" . $item['Category ID'] . "'>$content</a>";
                         echo "</td>";
                         echo "</tr>";
                     } else {
                         echo "<td>";
                         $content = $item['cname'];
                         $counter++;
-                        echo "<a href='/product/category/2/".$item['Category ID']."'>$content</a>";
+                        echo "<a href='/product/category/2/" . $item['Category ID'] . "'>$content</a>";
                         echo "</td>";
                     }
                 }
@@ -84,20 +84,20 @@
                         echo "<td>";
                         $content = $item['cname'];
                         $counter++;
-                        echo "<a href='/product/category/3/".$item['Category ID']."'>$content</a>";
+                        echo "<a href='/product/category/3/" . $item['Category ID'] . "'>$content</a>";
                         echo "</td>";
                     } else if ($counter % 3 == 2) {
                         echo "<td>";
                         $content = $item['cname'];
                         $counter++;
-                        echo "<a href='/product/category/3/".$item['Category ID']."'>$content</a>";
+                        echo "<a href='/product/category/3/" . $item['Category ID'] . "'>$content</a>";
                         echo "</td>";
                         echo "</tr>";
                     } else {
                         echo "<td>";
                         $content = $item['cname'];
                         $counter++;
-                        echo "<a href='/product/category/3/".$item['Category ID']."'>$content</a>";
+                        echo "<a href='/product/category/3/" . $item['Category ID'] . "'>$content</a>";
                         echo "</td>";
                     }
                 }
@@ -114,20 +114,20 @@
                         echo "<td>";
                         $content = $item['cname'];
                         $counter++;
-                        echo "<a href='/product/category/4/".$item['Category ID']."'>$content</a>";
+                        echo "<a href='/product/category/4/" . $item['Category ID'] . "'>$content</a>";
                         echo "</td>";
                     } else if ($counter % 3 == 2) {
                         echo "<td>";
                         $content = $item['cname'];
                         $counter++;
-                        echo "<a href='/product/category/4/".$item['Category ID']."'>$content</a>";
+                        echo "<a href='/product/category/4/" . $item['Category ID'] . "'>$content</a>";
                         echo "</td>";
                         echo "</tr>";
                     } else {
                         echo "<td>";
                         $content = $item['cname'];
                         $counter++;
-                        echo "<a href='/product/category/4/".$item['Category ID']."'>$content</a>";
+                        echo "<a href='/product/category/4/" . $item['Category ID'] . "'>$content</a>";
                         echo "</td>";
                     }
                 }
