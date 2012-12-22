@@ -1,24 +1,24 @@
 <a href="#dashboard-menu" class="nav-header" data-toggle="collapse"><i class="icon-dashboard"></i>Dashboard</a>
 <ul id="dashboard-menu" class="nav nav-list collapse in">
     <?php if($active == 'index'): ?>
-    <li class="active"><a href="./index">Home</a></li>
+    <li class="active"><a href="/backend/index">Home</a></li>
     <?php else: ?>
-    <li><a href="./index">Home</a></li>
+    <li><a href="/backend/index">Home</a></li>
     <?php endif; ?>
     <?php if($active == 'product_list'): ?>
-    <li class ="active"><a href="./product_list">产品列表</a></li>
+    <li class ="active"><a href="/backend/product_list">产品列表</a></li>
     <?php else: ?>
-    <li ><a href="./product_list">产品列表</a></li>
+    <li ><a href="/backend/product_list">产品列表</a></li>
     <?php endif; ?>
     <?php if($active == 'product'): ?>
-    <li class ="active"><a href="./product">增加新产品</a></li>
+    <li class ="active"><a href="/backend/product">增加新产品</a></li>
     <?php else: ?>
-    <li ><a href="./product">增加新产品</a></li>
+    <li ><a href="/backend/product">增加新产品</a></li>
     <?php endif; ?>
     <?php if($active == 'media'): ?>
-    <li class ="active"><a href="./media">相册</a></li>
+    <li class ="active"><a href="/backend/media">相册</a></li>
     <?php else: ?>
-    <li ><a href="./media">相册</a></li>
+    <li ><a href="/backend/media">相册</a></li>
     <?php endif; ?>
     
     
@@ -40,5 +40,5 @@
     <li ><a href="terms-and-conditions.html">Terms and Conditions</a></li>
 </ul>-->
 
-<a href="./help" class="nav-header" ><i class="icon-question-sign"></i>帮助</a>
-<a href="./faq" class="nav-header" ><i class="icon-comment"></i>Faq</a>
+<a href="/backend/help" class="nav-header" ><i class="icon-question-sign"></i>帮助</a>
+<a href="/backend/faq" class="nav-header" ><i class="icon-comment"></i>Faq</a>
