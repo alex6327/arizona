@@ -19,8 +19,14 @@ class Product extends CI_Controller {
     function detail($grpId, $catId, $ssn, $sn) {
         $data = array();
         $this->load->model('products_model');
+        $grpName = $this->products_model->get_grpName($grpId);
         $data['product'] = $this->products_model->get_product($grpId, $catId, $ssn, $sn);
         $data['product_column'] = $this->products_model->get_product_column($grpId, $catId, $ssn, $sn);
+        $data['catName'] = $this->products_model->get_catName($grpName, $catId);
+        $data['grpId'] = $grpId;
+        $data['catId'] = $catId;
+        $data['ssn'] = $ssn;
+        $data['subCatName'] = $this->products_model->get_subCatName($grpName."_".$catId,$ssn);
 //            echo '<pre>';
 //            print_r($data['product']);
 //            die();
@@ -37,6 +43,7 @@ class Product extends CI_Controller {
         $grpName = $this->products_model->get_grpName($grpId);
         $data['products'] = $this->products_model->get_product($grpId, $catId, $ssn);
         $data['catName'] = $this->products_model->get_catName($grpName, $catId);
+        $data['subCatName'] = $this->products_model->get_subCatName($grpName."_".$catId,$ssn);
         $data['pagetitle'] = '产品列表';
         $data['pagebody'] = '/product/list';
         $data['sitenavi'] = '/product/list_sitenavi';
@@ -68,7 +75,7 @@ class Product extends CI_Controller {
             $data['alphaList'] = TRUE;
             $alpha = urldecode($this->uri->segment(5, 'A'));
             $page = $this->uri->segment(6, 1);
-            $config['base_url'] = "http://newwebsite/product/category/$grpId/$catId/$alpha";
+            $config['base_url'] = "http://localhost:8080/product/category/$grpId/$catId/$alpha";
             $config['total_rows'] = $this->products_model->get_category_rows($grpId, $catId, $alpha);
             $config['per_page'] = 60;
             $data['per_page'] = $config['per_page'];
@@ -93,7 +100,7 @@ class Product extends CI_Controller {
         } else {
             $data['alphaList'] = FALSE;
             $page = $this->uri->segment(6, 1);
-            $config['base_url'] = "http://newwebsite/product/category/$grpId/$catId/";
+            $config['base_url'] = "http://localhost:8080/product/category/$grpId/$catId/";
             $config['total_rows'] = $this->products_model->get_category_rows($grpId, $catId);
             $config['per_page'] = 60;
             $data['per_page'] = $config['per_page'];
@@ -119,7 +126,7 @@ class Product extends CI_Controller {
     function test() {
         $this->load->library('pagination');
 
-        $config['base_url'] = 'http://newwebsite/product/test/';
+        $config['base_url'] = 'http://localhost:8080/product/test/';
         $config['total_rows'] = 200;
         $config['per_page'] = 20;
 

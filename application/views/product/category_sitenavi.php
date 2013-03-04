@@ -10,7 +10,7 @@
         <li>&#187;</li>
         <li><a href="/">主页</a></li>
         <li>&#187;</li>
-        <li class="current"><a href="#"><?=$catName; ?></a></li>
+        <li class="current"><?=$catName; ?></li>
         
     </ul>
 </div>

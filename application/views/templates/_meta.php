@@ -11,6 +11,7 @@ if (!defined('APPPATH'))
     <title><?php echo $pagetitle ?></title>
     <link rel="icon" type="image/png" href="imgs/logo.png" />
     <link type="text/css" href="/assets/css/layout.css" rel="stylesheet" />	 
+    <link type="text/css" href="/assets/css/test.css" rel="stylesheet" />	 
     <link type="text/css" href="/assets/css/jquery-ui.css" rel="stylesheet"/>
     <script type="text/javascript" src="/assets/js/jquery-1.8.2.min.js"></script>
     <script type="text/javascript" src="/assets/js/jquery.slidepanel.setup.js"></script>

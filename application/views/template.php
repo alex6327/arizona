@@ -15,13 +15,17 @@
         <div class="warapper col1">
             <?php $this->load->view("templates/_header"); ?>
         </div>
+        <?php if(isset($sitenavi)): ?>
         <div class="warapper col2">
 
             <?php $this->load->view($sitenavi, $data); ?>
         </div>
+        <?php endif; ?>
+        <?php if(isset($pagebody)): ?>
         <div class="warapper col3">
             <?php $this->load->view($pagebody, $data); ?>            
         </div>
+        <?php endif; ?>
         <div class="warapper col4">
             <?php $this->load->view("templates/_footer"); ?>            
         </div>

@@ -6,14 +6,8 @@
 ?>
 <div id="breadcrumb">
     <ul>
-        <li class="first">You Are Here</li>
+        <li class="first">您在这里</li>
         <li>&#187;</li>
-        <li><a href="#">Home</a></li>
-        <li>&#187;</li>
-        <li><a href="#">Grand Parent</a></li>
-        <li>&#187;</li>
-        <li><a href="#">Parent</a></li>
-        <li>&#187;</li>
-        <li class="current"><a href="#">Child</a></li>
+        <li>购物车</li>
     </ul>
 </div>

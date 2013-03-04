@@ -8,12 +8,10 @@
     <ul>
         <li class="first">您在这里</li>
         <li>&#187;</li>
-        <li><a href="#">主页</a></li>
+        <li><a href="/">主页</a></li>
         <li>&#187;</li>
-        <li><a href="#"><?=$catName; ?></a></li>
+        <li><a href="/product/category/<?=$grpId ?>/<?=$catId ?>"><?=$catName; ?></a></li>
         <li>&#187;</li>
-        <li><a href="#"></a></li>
-        <li>&#187;</li>
-        <li class="current"><a href="#">Child</a></li>
+        <li class="current"><?=$subCatName; ?></li>
     </ul>
 </div>
