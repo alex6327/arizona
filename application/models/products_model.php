@@ -46,6 +46,41 @@ class Products_model extends CI_Model {
         }
     }
 
+    function get_listing($grpId, $catId, $ssn, $page, $perPage) {
+
+        $grpName = $this->get_grpName($grpId);
+        $catName = $this->get_catName($grpName, $catId);
+        $query_table = $grpName . "_" . $catId . "_" . "prod";
+        if ($this->verify_table($query_table)) {
+            
+        } else {
+            $query_table = $grpName . "_" . $catId . "_" . $ssn . "_prod";
+        }
+        
+        $offset = ($page - 1) * $perPage;
+        $query = $this->db->query("select * from $query_table where ssn = $ssn  LIMIT $offset,$perPage");
+
+        return $query->result_array();
+    }
+
+    function get_listing_rows($grpId, $catId, $ssn) {
+
+        $grpName = $this->get_grpName($grpId);
+        $catName = $this->get_catName($grpName, $catId);
+        $query_table = $grpName . "_" . $catId . "_" . "prod";
+        if ($this->verify_table($query_table)) {
+            
+        } else {
+            $query_table = $grpName . "_" . $catId . "_" . $ssn . "_prod";
+        }
+
+        $query = $this->db->query("select * from $query_table where ssn = $ssn;");
+        if ($query->num_rows() > 0) {
+
+            return $query->num_rows();
+        }
+    }
+
     function verify_table($tblName) {
         $query = $this->db->query("SHOW TABLES FROM biocompdb");
         foreach ($query->result_array() as $row) {
@@ -144,7 +179,6 @@ class Products_model extends CI_Model {
         $grpName = $this->get_grpName($grpId);
         $query = $this->db->query("SELECT * FROM $grpName;");
         return $query->result_array();
-        
     }
 
 }

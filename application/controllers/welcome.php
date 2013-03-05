@@ -33,7 +33,7 @@ class Welcome extends CI_Controller {
         $data['equipments'] = $this->products_model->get_catNames('3');
         $data['softwares'] = $this->products_model->get_catNames('4');
         $data['pagetitle'] = '生物产品仓库';
-        $data['pagebody'] = 'home';
+        //$data['pagebody'] = 'home';
         $data['sitenavi'] = 'slide';
         $data['data'] = &$data;
         $this->load->view('template', $data);

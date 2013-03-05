@@ -76,5 +76,6 @@
 </tbody></table>-->
 
     </form>
+    <div id ="pagniation"><?php echo $pagination; ?></div>
 
 </div>

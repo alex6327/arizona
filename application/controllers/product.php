@@ -40,8 +40,16 @@ class Product extends CI_Controller {
     function listing($grpId, $catId, $ssn) {
         $data = array();
         $this->load->model('products_model');
+        $this->load->library('pagination');
+        $page = $this->uri->segment(6, 1);
+        $config['base_url'] = "http://localhost:8080/product/listing/$grpId/$catId/$ssn";
+        $config['total_rows'] = $this->products_model->get_listing_rows($grpId, $catId, $ssn);
+        $config['per_page'] = 10;
+        $config['use_page_numbers'] = TRUE;
+        $config['uri_segment'] = 6;
+        $config['num_links'] = 7;
         $grpName = $this->products_model->get_grpName($grpId);
-        $data['products'] = $this->products_model->get_product($grpId, $catId, $ssn);
+        $data['products'] = $this->products_model->get_listing($grpId, $catId, $ssn,$page,$config['per_page']);
         $data['catName'] = $this->products_model->get_catName($grpName, $catId);
         $data['subCatName'] = $this->products_model->get_subCatName($grpName."_".$catId,$ssn);
         $data['pagetitle'] = '产品列表';
@@ -51,6 +59,8 @@ class Product extends CI_Controller {
         $data['catId'] = $catId;
         $data['ssn'] = $ssn;
         $data['data'] = &$data;
+        $this->pagination->initialize($config);
+        $data['pagination'] = $this->pagination->create_links();
         $this->load->view('template', $data);
     }
 
@@ -81,7 +91,7 @@ class Product extends CI_Controller {
             $data['per_page'] = $config['per_page'];
             $config['use_page_numbers'] = TRUE;
             $config['uri_segment'] = 6;
-            $config['num_links'] = $this->products_model->get_category_rows($grpId, $catId, $alpha) / $config['per_page'];
+            $config['num_links'] = 7;
             $grpName = $this->products_model->get_grpName($grpId);
             $catName = $this->products_model->get_catName($grpName, $catId);
             $data['records'] = $this->products_model->get_category($grpId, $catId, $page, $config['per_page'], $alpha);
