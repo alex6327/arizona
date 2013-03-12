@@ -59,7 +59,7 @@ class Cart extends CI_Controller {
         } while ($rowId != '');
         redirect('/cart');
     }
-
+    
     function total() {
         echo $this->cart->total();
     }

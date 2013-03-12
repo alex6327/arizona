@@ -48,7 +48,7 @@
                                     <li>
                                         <span class="">
                                         </span>
-                                        <a href="" target="_blank" class=""><?php echo $product['supplier']; ?></a>&nbsp;
+                                        <a href="" target="_blank" class=""><?php echo $product['Cat.No.']; ?></a>&nbsp;
                                         <span class="">
                                         </span>
                                     </li>

@@ -31,11 +31,15 @@ class Account extends CI_Controller {
         $this->form_validation->set_rules('email', 'Emal address', 'trim|required|valid_email');
         $this->form_validation->set_rules('pwd', 'Password', 'trim|required|min_length[4]|matches[pwd_confir]');
         $this->form_validation->set_rules('pwd_confir', 'Password Confirmation', 'trim|required|min_length[4]');
-        $this->form_validation->set_rules('uname', 'Username', 'trim|required|min_length[2]|max_length[5]');
+        $this->form_validation->set_rules('uname', 'Username', 'trim|required|min_length[2]|max_length[12]');
         if ($this->form_validation->run() !== false) {
 
             $this->load->model('account_model');
             $this->account_model->insert_entry();
+            echo "successed";
+ redirect('/');
+//echo "<script type='text/javascript'>alert('创建帐号成功。');</script>";
+//            redirect("/");
         } else {
             $this->register();
         }
@@ -107,12 +111,7 @@ class Account extends CI_Controller {
                     redirect($previousUrl);
                 }
             } else {
-                header('Content-Type:text/html;charset=utf-8');
-                if ($previousUrl == '') {
-                    echo "<script language=javascript>alert('您的Email地址或者密码有错误');history.go(-1);</script>";
-                } else {
-                    echo "<script language=javascript>alert('您的Email地址或者密码有错误');history.go(-2);</script>";
-                }
+                
             }
         } else {
             $loginStatus = $this->session->userdata('login');

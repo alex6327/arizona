@@ -54,20 +54,20 @@
                         echo "<td>";
                         $content = $item['cname'];
                         $counter++;
-                        echo "<a href='/product/category/2/" . $item['Category ID'] . "'>$content</a>";
+                        echo "<a>$content</a>";
                         echo "</td>";
                     } else if ($counter % 3 == 2) {
                         echo "<td>";
                         $content = $item['cname'];
                         $counter++;
-                        echo "<a href='/product/category/2/" . $item['Category ID'] . "'>$content</a>";
+                        echo "<a>$content</a>";
                         echo "</td>";
                         echo "</tr>";
                     } else {
                         echo "<td>";
                         $content = $item['cname'];
                         $counter++;
-                        echo "<a href='/product/category/2/" . $item['Category ID'] . "'>$content</a>";
+                        echo "<a>$content</a>";
                         echo "</td>";
                     }
                 }
@@ -84,20 +84,20 @@
                         echo "<td>";
                         $content = $item['cname'];
                         $counter++;
-                        echo "<a href='/product/category/3/" . $item['Category ID'] . "'>$content</a>";
+                        echo "<a>$content</a>";
                         echo "</td>";
                     } else if ($counter % 3 == 2) {
                         echo "<td>";
                         $content = $item['cname'];
                         $counter++;
-                        echo "<a href='/product/category/3/" . $item['Category ID'] . "'>$content</a>";
+                        echo "<a>$content</a>";
                         echo "</td>";
                         echo "</tr>";
                     } else {
                         echo "<td>";
                         $content = $item['cname'];
                         $counter++;
-                        echo "<a href='/product/category/3/" . $item['Category ID'] . "'>$content</a>";
+                        echo "<a>$content</a>";
                         echo "</td>";
                     }
                 }
@@ -114,20 +114,20 @@
                         echo "<td>";
                         $content = $item['cname'];
                         $counter++;
-                        echo "<a href='/product/category/4/" . $item['Category ID'] . "'>$content</a>";
+                        echo "<a>$content</a>";
                         echo "</td>";
                     } else if ($counter % 3 == 2) {
                         echo "<td>";
                         $content = $item['cname'];
                         $counter++;
-                        echo "<a href='/product/category/4/" . $item['Category ID'] . "'>$content</a>";
+                        echo "<a>$content</a>";
                         echo "</td>";
                         echo "</tr>";
                     } else {
                         echo "<td>";
                         $content = $item['cname'];
                         $counter++;
-                        echo "<a href='/product/category/4/" . $item['Category ID'] . "'>$content</a>";
+                        echo "<a>$content</a>";
                         echo "</td>";
                     }
                 }
@@ -139,19 +139,19 @@
     </div>
     <div id="featured_slide">
 
-        <div class="featured_box"><a href="#"><img src="/assets/images/demo/(1).jpg" alt="" /></a>
+        <div class="featured_box"><a href="#"><img src="/assets/images/flash-1.png" alt="" /></a>
 
         </div>
-        <div class="featured_box"><a href="#"><img src="/assets/images/demo/(2).jpg" alt="" /></a>
+        <div class="featured_box"><a href="#"><img src="/assets/images/flash-2.png" alt="" /></a>
 
         </div>
-        <div class="featured_box"><a href="#"><img src="/assets/images/demo/(3).jpg" alt="" /></a>
+        <div class="featured_box"><a href="#"><img src="/assets/images/flash-3.png" alt="" /></a>
 
         </div>
-        <div class="featured_box"><a href="#"><img src="/assets/images/demo/(4).jpg" alt="" /></a>
+        <div class="featured_box"><a href="#"><img src="/assets/images/flash-4.png" alt="" /></a>
 
         </div>
-        <div class="featured_box"><a href="#"><img src="/assets/images/demo/(5).jpg" alt="" /></a>
+        <div class="featured_box"><a href="#"><img src="/assets/images/flash-5.png" alt="" /></a>
 
         </div>
 

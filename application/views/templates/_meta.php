@@ -19,6 +19,23 @@ if (!defined('APPPATH'))
     <script type="text/javascript" src="/assets/js/jquery.cycle.setup.js"></script>
     <script type="text/javascript" src="/assets/js/jquery-ui.js"></script>
     <script type="text/javascript" src="/assets/js/ajax.js"></script>
+    <?php
+    if (isset($pagebody)) {
+        if ($pagebody == "product/pcr" or $pagebody == "product/pcr_listing") {
+            echo '<link type="text/css" href="/assets/css/pcr.css" rel="stylesheet"/>';
+            echo '<script type="text/javascript" src="/assets/js/pcr.cycle.setup.js"></script>';
+            echo "<script type='text/javascript'>
+            $(document).ready(function() {
+                $('#fsn ul li:nth-child(1) a').text('EasyScript™ cDNA Synthesis Kit');
+                $('#fsn ul li:nth-child(2) a').text('EasyScript Plus™ cDNA Synthesis Kit');
+                $('#fsn ul li:nth-child(3) a').text('EvaGreen qPCR Mastermix');
+                $('#fsn ul li:nth-child(4) a').text('Bestaq™ DNA Polymerase');
+                $('#fsn ul li:nth-child(5) a').text('Taq Plus DNA Polymerase PCR');
+            });
+        </script>";
+        }
+    }
+    ?>
     <script type="text/javascript">
 <?php
 if (isset($slideDown)) {
@@ -41,7 +58,7 @@ if ($username == '') {
    $('a#slideit').replaceWith( '<a href=\"#\">$username</a>' );
 });";
     echo "$(document).ready(function(){
-                   $('li.right').append('<a href=\"/account/logout\">退出</a>');
+                   $('li.right').append('<a href=\"/account/logout\" class=\"logout\">退出</a>');
                });";
 }
 ?>

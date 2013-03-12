@@ -26,9 +26,9 @@
             <?php $this->load->view($pagebody, $data); ?>            
         </div>
         <?php endif; ?>
-        <div class="warapper col4">
+<!--        <div class="warapper col4">
             <?php $this->load->view("templates/_footer"); ?>            
-        </div>
+        </div>-->
         <div class="warapper col5">
             <?php $this->load->view("templates/_copyright"); ?>            
         </div>

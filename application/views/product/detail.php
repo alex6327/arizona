@@ -26,10 +26,10 @@
                             <td>规 格：</td>
                             <td><?php echo $product['Quantity']; ?>&nbsp;</td>
                         </tr>
-                        <tr>
+<!--                        <tr>
                             <td>供应商：</td>
                             <td><?php echo $product['supplier']; ?>&nbsp;</td>
-                        </tr>
+                        </tr>-->
                         <tr>
                             <td>单 价：</td>
                             <td><?php echo $product['Price']; ?>&nbsp;</td>
@@ -82,7 +82,7 @@
                 ?>
             </tbody>
         </table>
-        <div id="comments">
+<!--        <div id="comments">
             <h2>Comments</h2>
             <ul class="commentlist">
                 <li class="comment_odd">
@@ -101,8 +101,8 @@
                     <p>This is an example of a comment made on a post. You can either edit the comment, delete the comment or reply to the comment. Use this as a place to respond to the post or to share what you are thinking.</p>
                 </li>
             </ul>
-        </div>
-        <h2>Write A Comment</h2>
+        </div>-->
+<!--        <h2>Write A Comment</h2>
         <div id="respond">
             <form action="#" method="post">
                 <p>
@@ -123,7 +123,7 @@
                     <input name="reset" type="reset" id="reset" tabindex="5" value="Reset Form" />
                 </p>
             </form>
-        </div>
+        </div>-->
     </div>
     <div id="column">
         <div id="accordion">
@@ -146,12 +146,12 @@
                 sdfasfas
             </div>
         </div>
-        <div class="holder">
+<!--        <div class="holder">
             <h2 class="title"><img src="/assets/images/demo/60x60.gif" alt="" />Nullamlacus dui ipsum conseque loborttis</h2>
             <p>Nullamlacus dui ipsum conseque loborttis non euisque morbi penas dapibulum orna. Urnaultrices quis curabitur phasellentesque.</p>
             <p class="readmore"><a href="#">Continue Reading &raquo;</a></p>
-        </div>
-        <div id="featured">
+        </div>-->
+<!--        <div id="featured">
             <ul>
                 <li>
                     <h2>Indonectetus facilis leonib</h2>
@@ -160,8 +160,8 @@
                     <p class="readmore"><a href="#">Continue Reading &raquo;</a></p>
                 </li>
             </ul>
-        </div>
-        <div class="holder">
+        </div>-->
+<!--        <div class="holder">
             <h2>Lorem ipsum dolor</h2>
             <p>Nuncsed sed conseque a at quismodo tris mauristibus sed habiturpiscinia sed.</p>
             <ul>
@@ -171,7 +171,7 @@
             </ul>
             <p>Nuncsed sed conseque a at quismodo tris mauristibus sed habiturpiscinia sed. Condimentumsantincidunt dui mattis magna intesque purus orci augue lor nibh.</p>
             <p class="readmore"><a href="#">Continue Reading &raquo;</a></p>
-        </div>
+        </div>-->
     </div>
     <div class="clear"></div>
 </div>

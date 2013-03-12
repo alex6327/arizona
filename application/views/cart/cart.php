@@ -51,4 +51,5 @@
     </table>
 
     <p><?php echo form_submit('', '更新购物车'); ?><?php echo form_close(); ?></p>
+    <>
 </div>

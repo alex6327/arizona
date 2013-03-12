@@ -47,10 +47,10 @@
     <div id="topnav">
         <ul>
             <li class="active"><a href="/">主页</a></li>
-            <li><a href="/product/detail">产品</a></li>
-            <li><a href="/product/listing">产品列表</a></li>
-            <li><a href="#">客服中心</a></li>
-            <li class="last"><a href="#">网站导航</a></li>
+<!--            <li><a href="/product/detail">产品</a></li>-->
+            <li><a href="/cart">购物车</a></li>
+<!--            <li><a href="#">客服中心</a></li>
+            <li class="last"><a href="#">网站导航</a></li>-->
         </ul>
     </div>
     <div id="loginpanel">

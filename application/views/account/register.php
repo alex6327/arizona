@@ -15,24 +15,30 @@
                 <tr align="center">
                     <td height="25" align="left">用户名 <span style="color:#F00">*</span></td>
                     <td width="79%" height="30" colspan="5" align="left" bgcolor="#F5F5F5"><input name="uname" type="text" id="uname" value="<?php echo set_value('uname'); ?>" size="45" />
+                        &nbsp;&nbsp;2-12个字符，一个汉字为两个字符，推荐使用中文用户名。
                         <?php echo form_error('uname'); ?>
+                        
                     </td>
                 </tr>
                 <tr align="center">
                     <td height="25" align="left">密码 <span style="color:#F00">*</span></td>
                     <td height="30" colspan="5" align="left" bgcolor="#F5F5F5"><input name="pwd" type="password" id="pwd"  size="45" />
+                        &nbsp;&nbsp;4-10个字符，推荐使用字母加数字的组合密码。
                         <?php echo form_error('pwd'); ?>
+                        
                     </td>
                 </tr>
                 <tr align="center">
                     <td height="25" align="left">确认密码 <span style="color:#F00">*</span></td>
                     <td height="30" colspan="5" align="left" bgcolor="#F5F5F5"><input name="pwd_confir" type="password" id="pwd_confir" size="45" />
+                        &nbsp;&nbsp;请再输一次密码。
                         <?php echo form_error('pwd_confir'); ?>
                     </td>
                 </tr>
                 <tr align="center">
                     <td height="25" align="left">Email <span style="color:#F00">*</span></td>
                     <td height="30" colspan="5" align="left" bgcolor="#F5F5F5"><input name="email" type="text" id="email" value="<?php echo set_value('u'); ?>" size="45" onblur="validateEmail()"/>
+                        &nbsp;&nbsp;请输入您常用的电子邮箱，以方面以后找回密码。
                         <?php echo form_error('email'); ?>
                     </td>
                 </tr>
