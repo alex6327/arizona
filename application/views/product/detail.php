@@ -4,66 +4,54 @@
  * and open the template in the editor.
  */
 ?>
+
 <div id="container">
-    <div id="content">
-        <div class="product">
-            <?php echo form_open('cart/add'); ?>
-            <div class="name"><h1><?php echo $product['Product Name']; ?></h1></div>
-            <div class="img">
-                <img class="imgl" src="/assets/images/demo/imgl.gif" alt="" width="125" height="125" />
-            </div>
-            <div>
-                <table class="product">
-                    <tbody><tr>
-                            <td width="80" >产 品：</td>
-                            <td><strong><?php echo $product['Product Name']; ?></strong>&nbsp;</td>
-                        </tr>
-                        <tr>
-                            <td>货 号：</td>
-                            <td><?php echo $product['Cat.No.']; ?>&nbsp;</td>
-                        </tr>
-                        <tr>
-                            <td>规 格：</td>
-                            <td><?php echo $product['Quantity']; ?>&nbsp;</td>
-                        </tr>
-<!--                        <tr>
+  <div id="content">
+    <div class="product"> <?php echo form_open('cart/add'); ?>
+      <div class="name">
+        <h1><?php echo $product['Product Name']; ?></h1>
+      </div>
+      <div class="img"> <img class="imgl" src="/assets/images/blank.png" alt="" width="125" height="125" /> </div>
+      <div>
+        <table class="product">
+          <tbody>
+            <tr>
+              <td width="80" >产 品：</td>
+              <td><strong><?php echo $product['Product Name']; ?></strong>&nbsp;</td>
+            </tr>
+            <tr>
+              <td>货 号：</td>
+              <td><?php echo $product['Cat.No.']; ?>&nbsp;</td>
+            </tr>
+            <tr>
+              <td>规 格：</td>
+              <td><?php echo $product['Quantity']; ?>&nbsp;</td>
+            </tr>
+            <!--                        <tr>
                             <td>供应商：</td>
                             <td><?php echo $product['supplier']; ?>&nbsp;</td>
                         </tr>-->
-                        <tr>
-                            <td>单 价：</td>
-                            <td><?php echo $product['Price']; ?>&nbsp;</td>
-                        </tr>
-
-
-                        <tr>
-                            <td colspan="2">
-                                <?php echo form_hidden('id', $product['sn']); ?>
-                                <?php echo form_hidden('name', $product['Product Name']); ?>
-                                <?php echo form_hidden('price', $product['Price']); ?>
-                                <?php echo form_hidden('table', $product['table']); ?>
-                                <?php echo form_hidden('quantity', $product['Quantity']); ?>
-                                <?php echo form_input(array('name' => 'qty', 'value' => '1', 'maxlength' => '3', 'size' => '5')); ?>
-                                <?php echo form_submit('action', 'Add to Cart'); ?>
-                                <?php echo form_close(); ?>
-                            </td>
-                        </tr>
-                        <!--end-->
-                    </tbody></table>
-            </div>
-
-
-        </div>
-        <!--      <h1>详细信息</h1>-->
-        <table class="product_information">
-            <thead>
-                <tr>
-                    <th colspan='4'>产品信息</th>
-
-                </tr>
-            </thead>
-            <tbody>
-                <?php
+            <tr>
+              <td>单 价：</td>
+              <td><?php echo $product['Price']; ?>&nbsp;</td>
+            </tr>
+            <tr>
+              <td colspan="2"><?php echo form_hidden('id', $product['sn']); ?> <?php echo form_hidden('name', $product['Product Name']); ?> <?php echo form_hidden('price', $product['Price']); ?> <?php echo form_hidden('table', $product['table']); ?> <?php echo form_hidden('quantity', $product['Quantity']); ?> <?php echo form_input(array('name' => 'qty', 'value' => '1', 'maxlength' => '3', 'size' => '5')); ?> <?php echo form_submit('action', 'Add to Cart'); ?> <?php echo form_close(); ?></td>
+            </tr>
+            <!--end-->
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!--      <h1>详细信息</h1>-->
+    <table class="product_information">
+      <thead>
+        <tr>
+          <th colspan='4'>产品信息</th>
+        </tr>
+      </thead>
+      <tbody>
+        <?php
                 $i = 1;
                 foreach ($product_column as $column) {
                     if ($product[$column] != '') {
@@ -80,9 +68,9 @@
                     }
                 }
                 ?>
-            </tbody>
-        </table>
-<!--        <div id="comments">
+      </tbody>
+    </table>
+    <!--        <div id="comments">
             <h2>Comments</h2>
             <ul class="commentlist">
                 <li class="comment_odd">
@@ -101,8 +89,8 @@
                     <p>This is an example of a comment made on a post. You can either edit the comment, delete the comment or reply to the comment. Use this as a place to respond to the post or to share what you are thinking.</p>
                 </li>
             </ul>
-        </div>-->
-<!--        <h2>Write A Comment</h2>
+        </div>--> 
+    <!--        <h2>Write A Comment</h2>
         <div id="respond">
             <form action="#" method="post">
                 <p>
@@ -123,35 +111,48 @@
                     <input name="reset" type="reset" id="reset" tabindex="5" value="Reset Form" />
                 </p>
             </form>
-        </div>-->
+        </div>--> 
+  </div>
+  <div id="column">
+    <div id="accordion">
+      <p>PCR</p>
+      <div>
+        <ul>
+          <li>&nbsp;<a href="http://www.biocompete.com/product/listing/1/12/3463" title="Polymerase, Taq Polymerase Processivity">DNA Polymerases</a></li>
+          <li>&nbsp;<a href="http://www.biocompete.com/product/listing/1/12/3464" title="PCR Optimization, PCR Optimization MgCl2, Failsafe PCR">PCR Optimization Kits</a></l>
+         
+        </ul>
+      </div>
+      <p>qPCR</p>
+      <div>
+      <ul>
+        	  <li>&nbsp;<a href="http://www.biocompete.com/product/listing/1/12/3461" title="qPCR Mastermixes, qPCR Mastermix Plus">qPCR</a></li>
+        	  <li>&nbsp;<a href="http://www.biocompete.com/product/listing/1/22/3919" title="DNase I Footprinting, DNase I Invitrogen, DNase I Roche">DNaseI/RNaseOFF</a></li>
+              
+          </ul> 
+      </div>
+      <p>RT-PCR</p>
+      <div>
+      <ul>
+              <li>&nbsp;<a href="http://www.biocompete.com/product/listing/1/12/3462" title="cDNA Synthesis and Reverse Transcriptase, Reverse Transcriptase Inhinbitors">RT-PCR</a></li>
+            </ul>
+      </div>
+      <p>Others</p>
+      <div>
+      <ul>
+                <li>&nbsp;<a href="http://www.biocompete.com/product/listing/1/12/3465" title="DNA Dyes, RNA Stains">SafeView™ DNA Stains</a></li>
+                <li>&nbsp;<a href="http://www.biocompete.com/product/listing/1/12/3466" title="dNTP, dNTP PCR">dNTPs</a></li>
+                <li>&nbsp;<a href="http://www.biocompete.com/product/listing/1/22/3916" title="DNA Ladders, DNA Marker Standards">Opti-DNA Markers</a></li>
+
+            </ul>
+      </div>
     </div>
-    <div id="column">
-        <div id="accordion">
-            <p>Secondary Navigation</p>
-            <div><p>asdjfhajksh hwejshaflkjshfdjashfdhsaldfjhhsdlahfuiwryoqwjlbcas,ngbhasfglsdhajjhfasjdfljas
-                asdfjasdkfjwierqdcnsakjfdhasd
-                fasdfjhasjdfhajlskdhflkasdhfldjskahflkjdsahfljkashdfuiwehrwqblkhdaslbflkjhcvlbnlfjsadljbelwuisdlaf
-                asdjkfhasjdhflkjashdfljhasldk
-                sadjfhasjdf
-                asdjfhasjkhdflkj
-                
-                </p>
-            </div>
-            <p>Secondary Navigation</p>
-            <div>
-                asdfsadfasf
-            </div>
-            <p>Secondary Navigation</p>
-            <div>
-                sdfasfas
-            </div>
-        </div>
-<!--        <div class="holder">
+    <!--        <div class="holder">
             <h2 class="title"><img src="/assets/images/demo/60x60.gif" alt="" />Nullamlacus dui ipsum conseque loborttis</h2>
             <p>Nullamlacus dui ipsum conseque loborttis non euisque morbi penas dapibulum orna. Urnaultrices quis curabitur phasellentesque.</p>
             <p class="readmore"><a href="#">Continue Reading &raquo;</a></p>
-        </div>-->
-<!--        <div id="featured">
+        </div>--> 
+    <!--        <div id="featured">
             <ul>
                 <li>
                     <h2>Indonectetus facilis leonib</h2>
@@ -160,8 +161,8 @@
                     <p class="readmore"><a href="#">Continue Reading &raquo;</a></p>
                 </li>
             </ul>
-        </div>-->
-<!--        <div class="holder">
+        </div>--> 
+    <!--        <div class="holder">
             <h2>Lorem ipsum dolor</h2>
             <p>Nuncsed sed conseque a at quismodo tris mauristibus sed habiturpiscinia sed.</p>
             <ul>
@@ -171,7 +172,7 @@
             </ul>
             <p>Nuncsed sed conseque a at quismodo tris mauristibus sed habiturpiscinia sed. Condimentumsantincidunt dui mattis magna intesque purus orci augue lor nibh.</p>
             <p class="readmore"><a href="#">Continue Reading &raquo;</a></p>
-        </div>-->
-    </div>
-    <div class="clear"></div>
+        </div>--> 
+  </div>
+  <div class="clear"></div>
 </div>

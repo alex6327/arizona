@@ -7,7 +7,7 @@
 <div id="header">
     <div id="logo">
         <a title="www.biocompete.com" href="/welcome">
-            <img alt="" src="/assets/images/logo.png" />
+            <img alt="" src="/assets/images/LOGO.png" />
         </a>
     </div>
     <div id="search">

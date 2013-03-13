@@ -36,7 +36,7 @@
                     <tbody>
                         <tr align="center">
                             <td valign="top" width="25">&nbsp;<input id="" name="" value="" onclick="" type="checkbox"> </td>
-                            <td valign="top" width="105"><div><a href="" target="" title=""><img  height="100" width="100"></a></div></td>
+                            <td valign="top" width="105"><div><a href="" target="" title=""><img  height="100" width="100" src="/assets/images/blank.png" ></a></div></td>
                             <td width="10"> </td>
                             <td align="left" valign="top">
                                 <ul>

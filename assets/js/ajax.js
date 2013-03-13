@@ -14,12 +14,16 @@ $(document).ready(function() {
             type: 'POST',
             data: form_data,
             success: function(msg){
+                if(msg == ' ')
+                {
+                        window.location.href = '/';
+                }
                 if(msg == 'TRUE')
-                    {
-                        location.reload();
-                    }else{
-                        $("p.error").text(msg);
-                    }
+                {
+                    location.reload();
+                }else{
+                    $("p.error").text(msg);
+                }
             },
             dataType: "text"
         });

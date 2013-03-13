@@ -33,23 +33,30 @@ class Account extends CI_Controller {
         $this->form_validation->set_rules('pwd_confir', 'Password Confirmation', 'trim|required|min_length[4]');
         $this->form_validation->set_rules('uname', 'Username', 'trim|required|min_length[2]|max_length[12]');
         if ($this->form_validation->run() !== false) {
-
+            $this->load->helper('url');
             $this->load->model('account_model');
             $this->account_model->insert_entry();
-            echo "successed";
- redirect('/');
-//echo "<script type='text/javascript'>alert('创建帐号成功。');</script>";
-//            redirect("/");
+            $url = base_url() . "/account/login_page";
+            echo "<script type='text/javascript'>alert('创建帐号成功。');window.location.href = '$url';</script>";
         } else {
             $this->register();
         }
     }
 
     function login_page() {
+        $useremail = $this->session->userdata('useremail');
+        if ($useremail != '') {
+            redirect('/');
+        }
         $data = array();
         $data['slideDown'] = 'TRUE';
         $data['pagetitle'] = '生物产品仓库';
-        $data['pagebody'] = 'home';
+        $this->load->model('products_model');
+        $data['grpNames'] = $this->products_model->get_grpNames();
+        $data['reagents'] = $this->products_model->get_catNames('1');
+        $data['services'] = $this->products_model->get_catNames('2');
+        $data['equipments'] = $this->products_model->get_catNames('3');
+        $data['softwares'] = $this->products_model->get_catNames('4');
         $data['sitenavi'] = 'slide';
         $data['data'] = &$data;
         $this->load->view('template', $data);
@@ -60,6 +67,7 @@ class Account extends CI_Controller {
         $is_ajax = trim($this->input->post('ajax'));
         $email = trim($this->input->post('email'));
         $password = $this->input->post('password');
+
         if ($is_ajax) {
             if ($email == '') {
                 echo 'Email地址不能为空';
@@ -73,11 +81,18 @@ class Account extends CI_Controller {
                         $this->load->model('account_model');
                         $query_result = $this->account_model->login($email, $password);
                         if ($query_result->num_rows() > 0) {
+
                             $row = $query_result->row();
                             $accountName = $row->accountName;
                             $this->session->set_userdata('username', $accountName);
                             $this->session->set_userdata('useremail', $email);
-                            echo 'TRUE';
+                            $this->load->helper('url');
+
+                            if ($_SERVER['HTTP_REFERER'] == base_url() . "account/login_page") {
+                                echo ' ';
+                            }else{
+                                echo 'TRUE';
+                            }
                         } else {
                             echo 'Email地址或者密码不存在';
                         }
