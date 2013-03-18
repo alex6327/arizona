@@ -50,6 +50,6 @@
 
     </table>
 
-    <p><?php echo form_submit('', '更新购物车'); ?><?php echo form_close(); ?></p>
-    <>
+    <p><?php echo form_submit('', '更新购物车'); ?><a href="/cart/checkout">去结算</a><?php echo form_close(); ?></p>
+    
 </div>

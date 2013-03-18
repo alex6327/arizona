@@ -23,3 +23,14 @@ input, textarea, select{font-size:12px; font-family:"SimSun","宋体","Arial Nar
     cursor:pointer;
 }
 /*     search form in header*/
+form#address_book ul{
+    margin:10px 0px;
+}
+form#address_book li{
+    margin-bottom:10px;
+    line-height: 24px;
+    overflow: hidden;
+    list-style: none outside none;
+}
+form#address_book span{
+}

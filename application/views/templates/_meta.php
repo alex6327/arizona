@@ -68,7 +68,9 @@ if ($username == '') {
             $("#tabs").tabs();
         });
         $(function() {
-            $( "#accordion" ).accordion();
+            $( "#accordion" ).accordion({
+                heightStyle: "content"
+            });
         });
     
         function validateEmail()

@@ -84,6 +84,8 @@ class Account extends CI_Controller {
 
                             $row = $query_result->row();
                             $accountName = $row->accountName;
+                            $accountID = $row->accountID;
+                            $this->session->set_userdata('accountID', $accountID);
                             $this->session->set_userdata('username', $accountName);
                             $this->session->set_userdata('useremail', $email);
                             $this->load->helper('url');

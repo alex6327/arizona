@@ -59,7 +59,7 @@ class Cart extends CI_Controller {
         } while ($rowId != '');
         redirect('/cart');
     }
-    
+
     function total() {
         echo $this->cart->total();
     }
@@ -78,6 +78,48 @@ class Cart extends CI_Controller {
 
         $this->cart->destroy();
         echo 'destory called';
+    }
+
+    function checkout() {
+        $useremail = $this->session->userdata('useremail');
+        if ($useremail == '') {
+            $data = array();
+            $data['slideDown'] = 'TRUE';
+
+            $data['pagetitle'] = '结算中心';
+            $data['pagebody'] = 'cart/cart';
+            $data['sitenavi'] = 'cart/cart_sitenavi';
+            $data['data'] = &$data;
+            $this->load->view('template', $data);
+        } else {
+            $data = array();
+            $data['pagetitle'] = '结算中心';
+            $data['pagebody'] = 'cart/checkout';
+            $data['sitenavi'] = 'cart/cart_sitenavi';
+            $data['data'] = &$data;
+            $this->load->view('template', $data);
+        }
+    }
+
+    function processing() {
+        $this->load->library('form_validation');
+        $this->form_validation->set_rules('fullName', '收货人姓名', 'trim|required');
+        $this->form_validation->set_rules('province', '省', 'trim|required');
+        $this->form_validation->set_rules('city', '市', 'trim|required');
+        $this->form_validation->set_rules('district', '区/县', 'trim|required');
+        $this->form_validation->set_rules('streetAddress', '街道地址', 'trim|required');
+        $this->form_validation->set_rules('postCode', '邮政编码', 'trim|required');
+//        $this->form_validation->set_rules('pwd', 'Password', 'trim|required|min_length[4]|matches[pwd_confir]');
+//        $this->form_validation->set_rules('pwd_confir', 'Password Confirmation', 'trim|required|min_length[4]');
+//        $this->form_validation->set_rules('uname', 'Username', 'trim|required|min_length[2]|max_length[12]');
+        if ($this->form_validation->run() !== false) {
+            $this->load->model('checkout_model');
+            $this->checkout_model->insert_checkout_entry();
+            echo "successful";
+        }
+        else {
+            $this->checkout();
+        }
     }
 
 }
