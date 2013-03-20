@@ -115,9 +115,32 @@ class Cart extends CI_Controller {
         if ($this->form_validation->run() !== false) {
             $this->load->model('checkout_model');
             $this->checkout_model->insert_checkout_entry();
-            echo "successful";
-        }
-        else {
+            $this->load->library('email');
+
+            $this->email->from('alex@abmgood.com', 'alex');
+            $this->email->to($fpEmail);
+            //$this->email->cc('another@another-example.com');
+            //$this->email->bcc('them@their-example.com');
+
+            $this->email->subject('ABM users password retrieving');
+            $this->email->message("Dear customer : <p>Your account information is retrived as below.<p>
+                        Email Address: $fpEmail;<br>
+                        Password: $result;<br>
+                        .<p>
+                        To visit our website, please click <a href='http://www.abmgood.com'>www.abmGood.com</a>.<p>
+                        Thank you for using ABM website as your products and services source.<p>
+                        Best Regards,<p>
+                        Applied Biological Materials Inc. <br>Suite 8-13520 Crestwood Place<br>
+                        Richmond, BC<br>
+                        Canada, V6V 2G2<br>
+                        Email: <a href='mailto:order@abmgood.com'>order@abmGood.com</a>");
+
+            if ($this->email->send()) {
+                echo "<script language=javascript>alert('Password retrieving email has been sent to $fpEmail successfully.');location.href='/account/login';</script>";
+            } else {
+                echo "<script language=javascript>alert('发送失败，请重试');history.go(-1);</script>";
+            }
+        } else {
             $this->checkout();
         }
     }

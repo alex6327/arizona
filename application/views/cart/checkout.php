@@ -61,11 +61,11 @@
                         <span style="font-size: 11px;color:#F00;"><?php echo form_error('extension'); ?></span>
                     </li>
 
-<!--                    <li class="container-btn">
-                        <div class="skin-gray" id="createD">
-                        </div>
-
-                    </li>-->
+                    <!--                    <li class="container-btn">
+                                            <div class="skin-gray" id="createD">
+                                            </div>
+                    
+                                        </li>-->
                 </ul>
                 <!--        <div class="tbl-deliver-address">
                             <table border="0" cellspacing="0" cellpadding="0" class="tbl-main">
@@ -167,6 +167,56 @@
             </div>
             <h3>提交订单</h3>
             <div>
+                <table cellpadding="6" cellspacing="1" style="width:100%" border="0">
+
+                    <tr>
+                        <th>产品信息</th>
+                        <th style="text-align:right">数量</th>
+                        
+                        <th style="text-align:right">价格</th>
+                        <th style="text-align:right">小计</th>
+                    </tr>
+
+                    <?php $i = 1; ?>
+
+                    <?php foreach ($this->cart->contents() as $items): ?>
+
+                        <?php echo form_hidden($i . 'rowid', $items['rowid']); ?>
+
+                        <tr>
+                           
+                            <td>
+                                <?php echo $items['name']; ?>
+
+                                <?php if ($this->cart->has_options($items['rowid']) == TRUE): ?>
+
+                                    <p>
+                                        <?php foreach ($this->cart->product_options($items['rowid']) as $option_name => $option_value): ?>
+
+                                            <strong><?php echo $option_name; ?>:</strong> <?php echo $option_value; ?><br />
+
+                                        <?php endforeach; ?>
+                                    </p>
+
+                                <?php endif; ?>
+
+                            </td>
+                             <td style="text-align:right"><?php echo $items['qty']; ?></td>
+                            <td style="text-align:right"><?php echo $this->cart->format_number($items['price']); ?></td>
+                            <td style="text-align:right">$<?php echo $this->cart->format_number($items['subtotal']); ?></td>
+                        </tr>
+
+                        <?php $i++; ?>
+
+                    <?php endforeach; ?>
+
+                    <tr>
+                        <td colspan="2"> </td>
+                        <td class="right"><strong>总计</strong></td>
+                        <td class="right">$<?php echo $this->cart->format_number($this->cart->total()); ?></td>
+                    </tr>
+
+                </table>
             </div>
             <input type="submit" id="submit" name="orderSubmit" value="提交订单" />
         </form>
